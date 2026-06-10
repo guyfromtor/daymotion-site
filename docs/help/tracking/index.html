@@ -1,50 +1,96 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tracking Settings Help - DayMotion</title>
-  <link rel="stylesheet" href="../assets/help.css">
-</head>
-<body>
-  <header class="site-header">
-    <a class="brand" href="../">DayMotion Help</a>
-    <nav aria-label="Help topics">
-      <a href="../map/">Map</a>
-      <a href="../stops/">Stops</a>
-      <a href="../photos/">Photos</a>
-      <a href="../insights/">Insights</a>
-      <a href="../journal/">Journal</a>
-    </nav>
-  </header>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="DayMotion help for tracking settings, dwell radius, dwell duration, battery saver mode, and stop detection.">
+    <title>Tracking Settings Help - DayMotion</title>
+    <link rel="stylesheet" href="../assets/help.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand-link" href="../">DayMotion Help</a>
+      <nav class="header-nav" aria-label="Help topics">
+        <a href="../map/">Map</a>
+        <a href="../stops/">Stops</a>
+        <a href="../photos/">Photos</a>
+        <a href="../insights/">Insights</a>
+        <a href="../journal/">Journal</a>
+      </nav>
+    </header>
 
-  <main>
-    <section class="hero">
-      <p class="eyebrow">Settings</p>
-      <h1>Tune how DayMotion tracks movement.</h1>
-      <p class="lede">Tracking settings control automatic stop detection, activity event rows, battery behavior, display units, and stop thresholds.</p>
-    </section>
+    <main>
+      <section class="page-section hero" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">Tracking Settings Help</p>
+          <h1 id="page-title">Tune how DayMotion decides you stopped.</h1>
+          <p class="lede">Tracking settings control how movement becomes a route, how pauses become stops, and how much detail DayMotion records while balancing battery use.</p>
+          <div class="hero-actions" aria-label="Primary help actions">
+            <a class="button-link primary" href="#dwell">Understand dwell</a>
+            <a class="button-link" href="#questions">Common questions</a>
+          </div>
+        </div>
+      </section>
 
-    <section class="content-grid" aria-label="Tracking settings overview">
-      <article>
-        <h2>Core Controls</h2>
-        <ul>
-          <li><strong>Auto-detect stops</strong> lets DayMotion pause stop capture when you appear stationary.</li>
-          <li><strong>Show activity events</strong> keeps started, paused, resumed, and stopped rows visible in the journey timeline.</li>
-          <li><strong>Battery saver mode</strong> reduces GPS polling frequency when preserving battery matters more than route detail.</li>
-        </ul>
-      </article>
+      <section class="page-section" aria-labelledby="quick-title">
+        <p class="eyebrow">What The Controls Do</p>
+        <h2 id="quick-title">Each setting changes how DayMotion interprets movement.</h2>
+        <div class="quick-grid">
+          <article class="quick-card"><strong>Auto-detect stops</strong><p>Lets DayMotion create stops automatically when your location settles inside the dwell circle long enough.</p></article>
+          <article class="quick-card"><strong>Show activity events</strong><p>Shows started, paused, resumed, and stopped rows so the timeline explains recording state changes.</p></article>
+          <article class="quick-card"><strong>Battery saver mode</strong><p>Reduces GPS polling frequency. This can save battery but may make routes and stop timing less detailed.</p></article>
+          <article class="quick-card"><strong>Display units</strong><p>Changes how distances and weather values appear across journeys.</p></article>
+        </div>
+      </section>
 
-      <article>
-        <h2>Units And Thresholds</h2>
-        <p>Display units change journey and weather measurements. Stop radius and stop duration control how close and how long movement needs to settle before DayMotion treats a place as a stop.</p>
-      </article>
-    </section>
+      <section class="page-section" id="dwell" aria-labelledby="dwell-title">
+        <p class="eyebrow">Dwell Circle</p>
+        <h2 id="dwell-title">A stop needs both a radius and enough time.</h2>
+        <p>DayMotion watches for a dwell pattern: your location remains inside a circle around roughly the same place for a selected duration. The circle is controlled by Stop radius. The time requirement is controlled by Stop duration.</p>
+        <div class="quick-grid">
+          <article class="quick-card"><strong>Stop radius</strong><p>The size of the dwell circle. A smaller radius asks DayMotion to be stricter about staying near one place. A larger radius tolerates more GPS drift or small movement nearby.</p></article>
+          <article class="quick-card"><strong>Stop duration</strong><p>How long you need to remain inside the dwell circle before the pause becomes a stop.</p></article>
+          <article class="quick-card"><strong>Both must match</strong><p>A brief pause inside the circle is not enough. A long pause while wandering outside the circle is not enough either.</p></article>
+          <article class="quick-card"><strong>GPS drift matters</strong><p>Buildings, trees, transit, and weak signal can make location points move even when you are standing still. A larger radius can absorb that drift.</p></article>
+        </div>
+      </section>
 
-    <section class="guide">
-      <h2>Choosing Values</h2>
-      <p>Use smaller radius and shorter duration values when you want more precise stops. Use larger values when you prefer fewer, more intentional stops and less noise from brief pauses.</p>
-    </section>
-  </main>
-</body>
+      <section class="page-section" aria-labelledby="examples-title">
+        <p class="eyebrow">Examples</p>
+        <h2 id="examples-title">How radius and duration change stop capture.</h2>
+        <div class="quick-grid">
+          <article class="quick-card"><strong>Small radius, short duration</strong><p>Captures more precise, more frequent stops. Useful for walking days, parks, waterfronts, and compact areas.</p></article>
+          <article class="quick-card"><strong>Small radius, long duration</strong><p>Captures fewer precise stops. Useful when you only want places where you truly stayed.</p></article>
+          <article class="quick-card"><strong>Large radius, short duration</strong><p>Captures pauses more easily. Useful when GPS is noisy, but it can create extra stops around traffic lights, parking, or slow movement.</p></article>
+          <article class="quick-card"><strong>Large radius, long duration</strong><p>Creates calmer stop detection for driving or longer visits, but may merge nearby places into one stop.</p></article>
+        </div>
+      </section>
+
+      <section class="page-section" aria-labelledby="tips-title">
+        <p class="eyebrow">Tips</p>
+        <h2 id="tips-title">Start with the kind of journey you record most.</h2>
+        <div class="quick-grid">
+          <article class="quick-card"><strong>Walking</strong><p>Use a smaller radius if you care about individual places. Increase duration if short pauses are becoming stops.</p></article>
+          <article class="quick-card"><strong>Driving</strong><p>Use a larger radius or longer duration to avoid turning traffic and parking maneuvers into separate stops.</p></article>
+          <article class="quick-card"><strong>Noisy GPS areas</strong><p>If stops fail to appear even when you stayed put, increase the radius before increasing duration.</p></article>
+          <article class="quick-card"><strong>Too many stops</strong><p>Increase duration first. If nearby places are still fragmented, increase radius next.</p></article>
+        </div>
+      </section>
+
+      <section class="page-section" id="questions" aria-labelledby="questions-title">
+        <p class="eyebrow">Questions</p>
+        <h2 id="questions-title">Common questions</h2>
+        <div class="faq-list">
+          <article class="faq-item"><h3>What is the dwell circle?</h3><p>It is the stop radius around a place. DayMotion looks for location points that stay inside that circle long enough to count as a stop.</p></article>
+          <article class="faq-item"><h3>Why did DayMotion miss a stop?</h3><p>The pause may have been shorter than Stop duration, outside the Stop radius, affected by GPS drift, or recorded while tracking was paused.</p></article>
+          <article class="faq-item"><h3>Why did DayMotion create too many stops?</h3><p>The duration may be too short, the radius may be too small for GPS drift, or slow movement may look like repeated pauses.</p></article>
+          <article class="faq-item"><h3>Does battery saver change stop detection?</h3><p>It can. Lower polling frequency may reduce route detail and make stop timing less exact, especially during short visits.</p></article>
+        </div>
+      </section>
+
+      <section class="page-section privacy-note">Tracking settings affect how precise journey routes and stops become. Choose values that match the level of detail you want recorded.</section>
+    </main>
+
+    <footer class="site-footer"><p>DayMotion Help</p><p><a href="mailto:daymotion.app@gmail.com?subject=DayMotion%20Help">daymotion.app@gmail.com</a></p></footer>
+  </body>
 </html>

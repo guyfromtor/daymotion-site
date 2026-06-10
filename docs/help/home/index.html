@@ -1,51 +1,82 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Home Help - DayMotion</title>
-  <link rel="stylesheet" href="../assets/help.css">
-</head>
-<body>
-  <header class="site-header">
-    <a class="brand" href="../">DayMotion Help</a>
-    <nav aria-label="Help topics">
-      <a href="../map/">Map</a>
-      <a href="../stops/">Stops</a>
-      <a href="../photos/">Photos</a>
-      <a href="../insights/">Insights</a>
-      <a href="../journal/">Journal</a>
-    </nav>
-  </header>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="DayMotion help for starting, resuming, and reviewing journeys from Home.">
+    <title>Home Help - DayMotion</title>
+    <link rel="stylesheet" href="../assets/help.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand-link" href="../">DayMotion Help</a>
+      <nav class="header-nav" aria-label="Help topics">
+        <a href="../map/">Map</a>
+        <a href="../stops/">Stops</a>
+        <a href="../photos/">Photos</a>
+        <a href="../insights/">Insights</a>
+        <a href="../journal/">Journal</a>
+      </nav>
+    </header>
 
-  <main>
-    <section class="hero">
-      <p class="eyebrow">Home</p>
-      <h1>Start, resume, or review the day.</h1>
-      <p class="lede">The Home screen is the first place to begin a journey, return to an active one, or open recent DayMotion memories.</p>
-    </section>
+    <main>
+      <section class="page-section hero" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">Home Help</p>
+          <h1 id="page-title">Start, resume, or review the day.</h1>
+          <p class="lede">Home is the first place to begin a journey, return to one already in progress, and open recent DayMotion memories.</p>
+          <div class="hero-actions" aria-label="Primary help actions">
+            <a class="button-link primary" href="#use-home">Use Home</a>
+            <a class="button-link" href="#questions">Common questions</a>
+          </div>
+        </div>
+      </section>
 
-    <section class="content-grid" aria-label="Home overview">
-      <article>
-        <h2>What You Can Do Here</h2>
-        <ul>
-          <li>Start a new journey when you are ready to record movement, stops, weather, photos, moods, and notes.</li>
-          <li>Resume an active or paused journey without digging through Settings or previous records.</li>
-          <li>Open previous journeys when you want to review a saved day.</li>
-          <li>Move into the Map, Stops, Journeys, and Settings tabs from the main navigation.</li>
-        </ul>
-      </article>
+      <section class="page-section" aria-labelledby="quick-title">
+        <p class="eyebrow">What You Can Do Here</p>
+        <h2 id="quick-title">Home keeps the main journey actions close.</h2>
+        <div class="quick-grid">
+          <article class="quick-card"><strong>Start</strong><p>Begin a new journey when you want DayMotion to record movement, stops, weather, photos, moods, and notes.</p></article>
+          <article class="quick-card"><strong>Resume</strong><p>Return to an active or paused journey without searching through previous records.</p></article>
+          <article class="quick-card"><strong>Review</strong><p>Open previous journeys when you want to look back at a saved day.</p></article>
+          <article class="quick-card"><strong>Navigate</strong><p>Move into Map, Stops, Journeys, and Settings from the main tab bar.</p></article>
+        </div>
+      </section>
 
-      <article>
-        <h2>Active Journeys</h2>
-        <p>When a journey is already running, Home keeps the active journey close. Use it to jump back in, continue recording, or review the current state before switching to another screen.</p>
-      </article>
-    </section>
+      <section class="page-section" id="use-home" aria-labelledby="use-home-title">
+        <p class="eyebrow">Use Home</p>
+        <h2 id="use-home-title">Pick the action that matches the journey state.</h2>
+        <div class="quick-grid">
+          <article class="quick-card"><strong>No active journey</strong><p>Start a journey before moving if you want the route and stops to read as one continuous memory.</p></article>
+          <article class="quick-card"><strong>Journey in progress</strong><p>Use Home to jump back to the active journey, then check Map or Stops to see what DayMotion has captured.</p></article>
+          <article class="quick-card"><strong>Paused journey</strong><p>Resume before relying on new stop detection. A paused journey keeps its earlier stops, notes, and photos.</p></article>
+          <article class="quick-card"><strong>Past journey</strong><p>Open previous journeys when you want to review the map, stops, photos, journal, and insights later.</p></article>
+        </div>
+      </section>
 
-    <section class="guide">
-      <h2>Tips</h2>
-      <p>Start a journey before you begin moving if you want the route and stops to read as one continuous memory. If a journey is paused, resume it from Home before relying on new stop detection.</p>
-    </section>
-  </main>
-</body>
+      <section class="page-section" aria-labelledby="tips-title">
+        <p class="eyebrow">Tips</p>
+        <h2 id="tips-title">Make Home part of your journey routine.</h2>
+        <div class="quick-grid">
+          <article class="quick-card"><strong>Start early</strong><p>Start before the first meaningful movement so the journey begins with useful route context.</p></article>
+          <article class="quick-card"><strong>Check the state</strong><p>If Home shows an active or paused journey, open it before starting a new one.</p></article>
+          <article class="quick-card"><strong>Review after recording</strong><p>Use previous journeys to refine stop names, notes, moods, and photos once the day is over.</p></article>
+        </div>
+      </section>
+
+      <section class="page-section" id="questions" aria-labelledby="questions-title">
+        <p class="eyebrow">Questions</p>
+        <h2 id="questions-title">Common questions</h2>
+        <div class="faq-list">
+          <article class="faq-item"><h3>Should I start from Home or Map?</h3><p>Use either entry point when available. Home is the simpler starting point; Map is better when you want to immediately watch route and stop capture.</p></article>
+          <article class="faq-item"><h3>What happens if a journey is already active?</h3><p>Home keeps the active journey visible so you can return to it instead of accidentally starting another recording.</p></article>
+          <article class="faq-item"><h3>Can I edit a journey from Home?</h3><p>Home gets you back to the journey. Edit stop details, moods, notes, photos, and journal text from the journey screens.</p></article>
+        </div>
+      </section>
+
+      <section class="page-section privacy-note">Home may surface recent journey activity. Review a journey before sharing details from it.</section>
+    </main>
+
+    <footer class="site-footer"><p>DayMotion Help</p><p><a href="mailto:daymotion.app@gmail.com?subject=DayMotion%20Help">daymotion.app@gmail.com</a></p></footer>
+  </body>
 </html>
