@@ -3,19 +3,18 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Use the DayMotion Map to follow a journey, read the route, review stops, and understand tracking state.">
+    <meta name="description" content="DayMotion Map help for route shape, stop markers, tracking controls, zoom, position, and the camera button.">
     <title>Map Help - DayMotion</title>
     <link rel="stylesheet" href="../assets/help.css">
   </head>
   <body>
     <header class="site-header">
-      <a class="brand-link" href="../">
-        <img src="../assets/images/daymotion-app-icon.png" alt="" width="34" height="34">
-        <span>DayMotion Help</span>
-      </a>
-      <nav class="header-nav" aria-label="Help navigation">
-        <a href="../map/">Map</a>
-        <a href="mailto:daymotion.app@gmail.com?subject=DayMotion%20Help">Contact</a>
+      <a class="brand-link" href="../">DayMotion Help</a>
+      <nav class="header-nav" aria-label="Help topics">
+        <a href="../stops/">Stops</a>
+        <a href="../photos/">Photos</a>
+        <a href="../insights/">Insights</a>
+        <a href="../journal/">Journal</a>
       </nav>
     </header>
 
@@ -24,12 +23,9 @@
         <div>
           <p class="eyebrow">Map Help</p>
           <h1 id="page-title">Follow the shape of a journey.</h1>
-          <p class="lede">
-            The Map shows where DayMotion recorded movement, where stops were captured,
-            and whether the journey is active, paused, stopped, or being reviewed later.
-          </p>
+          <p class="lede">The Map shows where DayMotion recorded movement, where stops were captured, and whether the journey is active, paused, stopped, or being reviewed later.</p>
           <div class="hero-actions" aria-label="Primary help actions">
-            <a class="button-link primary" href="#read-the-map">Read the map</a>
+            <a class="button-link primary" href="#map-controls">Map controls</a>
             <a class="button-link" href="#questions">Common questions</a>
           </div>
         </div>
@@ -42,109 +38,73 @@
           <span class="callout callout-route" aria-hidden="true">1</span>
           <span class="callout callout-stops" aria-hidden="true">2</span>
           <span class="callout callout-status" aria-hidden="true">3</span>
-          <span class="callout callout-tabs" aria-hidden="true">4</span>
         </figure>
       </section>
 
       <section class="page-section" aria-labelledby="quick-title">
-        <p class="eyebrow" id="quick-title">What You Can See Here</p>
+        <p class="eyebrow">What You Can See Here</p>
+        <h2 id="quick-title">The map combines route, stops, and recording controls.</h2>
         <div class="quick-grid">
-          <article class="quick-card">
-            <strong>Route shape</strong>
-            <p>The blue line follows the recorded path instead of drawing straight lines between stops.</p>
-          </article>
-          <article class="quick-card">
-            <strong>Stop markers</strong>
-            <p>Numbered markers show the order DayMotion captured each stop.</p>
-          </article>
-          <article class="quick-card">
-            <strong>Tracking state</strong>
-            <p>The control pill shows whether the journey is stopped, active, or paused.</p>
-          </article>
-          <article class="quick-card">
-            <strong>Journey tabs</strong>
-            <p>Jump from the map to stops, photos, journal notes, and insights.</p>
-          </article>
+          <article class="quick-card"><strong>Route shape</strong><p>The blue line follows the recorded path instead of drawing straight lines between stops.</p></article>
+          <article class="quick-card"><strong>Stop markers</strong><p>Numbered markers show the order DayMotion captured each stop.</p></article>
+          <article class="quick-card"><strong>Tracking state</strong><p>The status area shows whether the journey is active, paused, stopped, or complete.</p></article>
+          <article class="quick-card"><strong>Camera</strong><p>The camera button captures a photo from the map and keeps it connected to the current journey context.</p></article>
+          <article class="quick-card"><strong>Zoom</strong><p>Zoom in and out to inspect a dense stop area or step back to see the whole route.</p></article>
+          <article class="quick-card"><strong>Position</strong><p>Use the position control to recenter on your current location or return to the active map context.</p></article>
         </div>
       </section>
 
-      <section class="page-section split" id="read-the-map" aria-labelledby="read-title">
-        <div class="section-heading">
-          <p class="eyebrow">Read The Map</p>
-          <h2 id="read-title">Use the route as the visual memory of the day.</h2>
-          <p>
-            DayMotion turns movement into a map-based record. The route, stop markers,
-            timing, and distance work together so you can quickly understand what happened.
-          </p>
-        </div>
-        <div class="content-stack">
-          <article class="content-card">
-            <h3><span class="number">1</span>Follow the route line</h3>
-            <p>The route line shows the captured path across the journey. Curves and intermediate points help preserve the actual shape of travel.</p>
-          </article>
-          <article class="content-card">
-            <h3><span class="number">2</span>Read numbered stops</h3>
-            <p>Stops are ordered from first to last. Tap a stop or open the Stops tab to review time, weather, mood, journal text, and photos.</p>
-          </article>
-          <article class="content-card">
-            <h3><span class="number">3</span>Check the journey state</h3>
-            <p>Use the status controls to see whether DayMotion is recording, paused, or reviewing a completed journey.</p>
-          </article>
-          <article class="content-card">
-            <h3><span class="number">4</span>Move between journey views</h3>
-            <p>The bottom tabs keep the Map close to the rest of the journey: Stops, Journeys, Settings, and other related detail screens.</p>
-          </article>
+      <section class="page-section" id="map-controls" aria-labelledby="controls-title">
+        <p class="eyebrow">Map Controls</p>
+        <h2 id="controls-title">Use the controls to record, inspect, and add photos.</h2>
+        <div class="quick-grid">
+          <article class="quick-card"><strong>Start</strong><p>Starts a new recording session so DayMotion can capture movement, stops, weather, photos, moods, and notes for the journey.</p></article>
+          <article class="quick-card"><strong>Pause</strong><p>Temporarily stops recording new movement while keeping the journey available to resume later.</p></article>
+          <article class="quick-card"><strong>Resume</strong><p>Continues a paused journey so new route points and stops can be added to the same memory.</p></article>
+          <article class="quick-card"><strong>Stop</strong><p>Ends the active journey. Review the route, stops, journal, photos, and insights afterward.</p></article>
+          <article class="quick-card"><strong>Camera button</strong><p>Use the camera from the map when the moment belongs to where you are now. Photos become part of the journey memory.</p></article>
+          <article class="quick-card"><strong>Location button</strong><p>Use position when you have panned away and want the map to follow your current area again.</p></article>
         </div>
       </section>
 
-      <section class="page-section split" aria-labelledby="tips-title">
-        <div class="section-heading">
-          <p class="eyebrow">Tips</p>
-          <h2 id="tips-title">When the map does not look right.</h2>
+      <section class="page-section" id="read-the-map" aria-labelledby="read-title">
+        <p class="eyebrow">Read The Map</p>
+        <h2 id="read-title">Route, stops, and controls work together.</h2>
+        <p>DayMotion turns movement into a map-based record. The route, stop markers, timing, distance, photos, and recording controls help you understand what happened and what is still being captured.</p>
+        <div class="quick-grid">
+          <article class="quick-card"><strong>Route</strong><p>The route line shows captured movement across the journey. Curves and intermediate points preserve the shape of travel.</p></article>
+          <article class="quick-card"><strong>Stops</strong><p>Stops are ordered from first to last. Open Stops to review time, weather, mood, journal text, and photos.</p></article>
+          <article class="quick-card"><strong>Photos</strong><p>Use the camera button when a photo should belong to the active journey, especially while reviewing the map context.</p></article>
+          <article class="quick-card"><strong>Navigation</strong><p>The bottom tabs keep Map close to Stops, Journeys, Settings, and related detail screens.</p></article>
         </div>
-        <div class="content-stack">
-          <article class="content-card">
-            <h3>Give DayMotion precise location access</h3>
-            <ul>
-              <li>Precise location helps DayMotion record trustworthy routes, stops, and distance.</li>
-              <li>If the route looks sparse, check iOS location permissions and Low Power Mode.</li>
-              <li>If you pause a journey, DayMotion keeps the journey available but stops recording new movement.</li>
-            </ul>
-          </article>
-          <article class="content-card">
-            <h3>Review instead of editing from the map</h3>
-            <p>Use the Stops, Journal, Photos, and Insights views when you want to refine the memory attached to a place.</p>
-          </article>
+      </section>
+
+      <section class="page-section" aria-labelledby="tips-title">
+        <p class="eyebrow">Tips</p>
+        <h2 id="tips-title">Use the map while recording and while reviewing.</h2>
+        <div class="quick-grid">
+          <article class="quick-card"><strong>Before moving</strong><p>Start the journey before the first meaningful movement so the route has useful context.</p></article>
+          <article class="quick-card"><strong>During pauses</strong><p>Pause when you want DayMotion to stop recording new movement without ending the journey.</p></article>
+          <article class="quick-card"><strong>When framing photos</strong><p>Use the camera button from the map when the photo is tied to where you are in the route.</p></article>
+          <article class="quick-card"><strong>When inspecting detail</strong><p>Zoom in around dense stops and use position to return to your current area after panning.</p></article>
         </div>
       </section>
 
       <section class="page-section" id="questions" aria-labelledby="questions-title">
         <p class="eyebrow">Questions</p>
-        <h2 id="questions-title">Common Map questions</h2>
-        <div class="faq-grid">
-          <article class="faq-item">
-            <h3>Why does the route bend?</h3>
-            <p>The route uses captured geometry so the journey reads like a path you traveled, not just direct stop-to-stop connectors.</p>
-          </article>
-          <article class="faq-item">
-            <h3>Can I pause tracking?</h3>
-            <p>Yes. Pausing keeps the journey available while DayMotion stops recording new movement.</p>
-          </article>
-          <article class="faq-item">
-            <h3>What if a stop is wrong?</h3>
-            <p>Open Stops or the journey detail screen to review captured stop information, notes, moods, and photos.</p>
-          </article>
+        <h2 id="questions-title">Common questions</h2>
+        <div class="faq-list">
+          <article class="faq-item"><h3>What is the camera button for?</h3><p>It lets you capture a photo from the Map while preserving the journey context. Use it when the photo belongs to the place or route you are recording.</p></article>
+          <article class="faq-item"><h3>What is the difference between pause and stop?</h3><p>Pause keeps the journey available while DayMotion stops recording new movement. Stop ends the active journey so you can review it as a completed memory.</p></article>
+          <article class="faq-item"><h3>Why use zoom controls?</h3><p>Zoom in to inspect nearby stops or route detail. Zoom out when you want the full shape of the journey.</p></article>
+          <article class="faq-item"><h3>What does the position button do?</h3><p>It brings the map back to your current area or active tracking context after you have moved the map manually.</p></article>
+          <article class="faq-item"><h3>Why does the route curve instead of connecting stops directly?</h3><p>The route uses captured geometry so the journey reads like a path you traveled, not just direct stop-to-stop connectors.</p></article>
         </div>
       </section>
 
-      <section class="page-section privacy-note" aria-label="Privacy note">
-        Map help may describe precise location and route tracking. Only share journey exports with people or services you trust.
-      </section>
+      <section class="page-section privacy-note">The map may show precise location history, route shape, stops, and photos. Review a journey before sharing it.</section>
     </main>
 
-    <footer class="site-footer">
-      <p>DayMotion Help</p>
-      <p><a href="mailto:daymotion.app@gmail.com?subject=DayMotion%20Help">daymotion.app@gmail.com</a></p>
-    </footer>
+    <footer class="site-footer"><p>DayMotion Help</p><p><a href="mailto:daymotion.app@gmail.com?subject=DayMotion%20Help">daymotion.app@gmail.com</a></p></footer>
   </body>
 </html>
