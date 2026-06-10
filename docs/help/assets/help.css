@@ -181,16 +181,23 @@ h1 {
 }
 
 .control-strip-figure {
-  width: min(126px, 42vw);
-  margin: 26px auto 30px;
+  width: clamp(52px, 14vw, 68px);
+  margin: 20px auto 28px;
 }
 
 .control-strip-figure img {
-  display: block;
   width: 100%;
   height: auto;
-  border-radius: 28px;
+  border-radius: 18px;
   box-shadow: var(--shadow);
+}
+
+.control-strip-figure .theme-shot-light {
+  display: block;
+}
+
+.control-strip-figure .theme-shot-dark {
+  display: none;
 }
 
 .theme-shot-dark {
@@ -422,6 +429,14 @@ h1 {
   }
 
   .theme-shot-dark {
+    display: block;
+  }
+
+  .control-strip-figure .theme-shot-light {
+    display: none;
+  }
+
+  .control-strip-figure .theme-shot-dark {
     display: block;
   }
 }
