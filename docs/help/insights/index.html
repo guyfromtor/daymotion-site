@@ -6,6 +6,54 @@
     <meta name="description" content="Use DayMotion Insights to understand distance, duration, stops, mood, weather, elevation, and journey highlights.">
     <title>Insights Help - DayMotion</title>
     <link rel="stylesheet" href="../assets/help.css">
+    <style>
+      #weather-elevation.weather-elevation-guide {
+        display: grid;
+        gap: clamp(28px, 4vw, 48px);
+      }
+
+      #weather-elevation .section-heading {
+        max-width: 42rem;
+      }
+
+      .weather-elevation-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: clamp(24px, 4vw, 44px);
+        align-items: start;
+      }
+
+      .weather-elevation-step {
+        display: grid;
+        grid-template-columns: minmax(150px, 0.72fr) minmax(0, 1fr);
+        gap: clamp(18px, 3vw, 30px);
+        align-items: center;
+      }
+
+      .weather-elevation-step .insight-example-card .phone-frame {
+        max-width: min(100%, 220px);
+      }
+
+      .weather-elevation-step .content-card {
+        align-self: center;
+      }
+
+      @media (max-width: 980px) {
+        .weather-elevation-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 620px) {
+        .weather-elevation-step {
+          grid-template-columns: 1fr;
+        }
+
+        .weather-elevation-step .insight-example-card .phone-frame {
+          max-width: min(100%, 260px);
+        }
+      }
+    </style>
   </head>
   <body>
     <header class="site-header">
@@ -66,45 +114,53 @@
         </div>
       </section>
 
-      <section class="page-section split" id="weather-elevation" aria-labelledby="weather-elevation-title">
+      <section class="page-section weather-elevation-guide" id="weather-elevation" aria-labelledby="weather-elevation-title">
         <div class="section-heading">
           <p class="eyebrow">Weather And Elevation</p>
           <h2 id="weather-elevation-title">Start with the summary, then tap into the details.</h2>
           <p>The weather and elevation graphs first show summarized stats so you can read the overall pattern quickly. Tap a stop number or time record when you want to inspect one moment in the journey, then tap the selected stop again to return to the summary.</p>
         </div>
-        <div class="content-stack">
-          <figure class="insight-example-card">
-            <div class="phone-frame">
-              <img class="theme-shot-light" src="../assets/images/screenshots/waterfront-golden-hour/insights-weather-summary-light.png" alt="Weather graph summary in light mode showing temperature, wind, comfort cards, and numbered stop badges.">
-              <img class="theme-shot-dark" src="../assets/images/screenshots/waterfront-golden-hour/insights-weather-summary-dark.png" alt="Weather graph summary in dark mode showing temperature, wind, comfort cards, and numbered stop badges.">
-            </div>
-            <figcaption>Weather summary</figcaption>
-          </figure>
-          <figure class="insight-example-card">
-            <div class="phone-frame">
-              <img class="theme-shot-light" src="../assets/images/screenshots/waterfront-golden-hour/insights-weather-detail-light.png" alt="Weather graph detail in light mode after selecting a stop number, showing the selected stop and its weather detail cards.">
-              <img class="theme-shot-dark" src="../assets/images/screenshots/waterfront-golden-hour/insights-weather-detail-dark.png" alt="Weather graph detail in dark mode after selecting a stop number, showing the selected stop and its weather detail cards.">
-            </div>
-            <figcaption>Weather detail</figcaption>
-          </figure>
-          <article class="content-card"><h3><span class="number">1</span>Read the weather summary</h3><p>The weather graph starts with the main temperature range and conditions recorded during the journey. Use it to see whether the day warmed, cooled, cleared, or became windier as stops changed.</p></article>
-          <article class="content-card"><h3><span class="number">2</span>Tap a weather stop number</h3><p>Numbered stop badges connect the graph to the journey timeline. Tap a stop number to see the weather recorded for that stop, including temperature, condition, wind, and the stop name. Tap the selected stop again to return to the summary.</p></article>
-          <figure class="insight-example-card">
-            <div class="phone-frame">
-              <img class="theme-shot-light" src="../assets/images/screenshots/waterfront-golden-hour/insights-elevation-summary-light.png" alt="Elevation graph summary in light mode showing altitude, climb, descent, and tappable stop and time records.">
-              <img class="theme-shot-dark" src="../assets/images/screenshots/waterfront-golden-hour/insights-elevation-summary-dark.png" alt="Elevation graph summary in dark mode showing altitude, climb, descent, and tappable stop and time records.">
-            </div>
-            <figcaption>Elevation summary</figcaption>
-          </figure>
-          <figure class="insight-example-card">
-            <div class="phone-frame">
-              <img class="theme-shot-light" src="../assets/images/screenshots/waterfront-golden-hour/insights-elevation-detail-light.png" alt="Elevation graph detail in light mode after selecting a record, showing selected stop altitude and time details.">
-              <img class="theme-shot-dark" src="../assets/images/screenshots/waterfront-golden-hour/insights-elevation-detail-dark.png" alt="Elevation graph detail in dark mode after selecting a record, showing selected stop altitude and time details.">
-            </div>
-            <figcaption>Elevation detail</figcaption>
-          </figure>
-          <article class="content-card"><h3><span class="number">3</span>Read the elevation summary</h3><p>The elevation graph begins with route-level stats such as high point, low point, climb, and descent. These summarize the vertical effort before you inspect individual measurements.</p></article>
-          <article class="content-card"><h3><span class="number">4</span>Tap an elevation record</h3><p>Elevation uses both stop numbers and time records. Tap a stop number for stop-specific altitude, or tap a time record to see the selected measurement and why it matters, such as highest point, lowest point, climb, or descent. Tap the selected stop or record again to return to the summary.</p></article>
+        <div class="weather-elevation-grid">
+          <div class="weather-elevation-step">
+            <figure class="insight-example-card">
+              <div class="phone-frame">
+                <img class="theme-shot-light" src="../assets/images/screenshots/waterfront-golden-hour/insights-weather-summary-light.png" alt="Weather graph summary in light mode showing temperature, wind, comfort cards, and numbered stop badges.">
+                <img class="theme-shot-dark" src="../assets/images/screenshots/waterfront-golden-hour/insights-weather-summary-dark.png" alt="Weather graph summary in dark mode showing temperature, wind, comfort cards, and numbered stop badges.">
+              </div>
+              <figcaption>Weather summary</figcaption>
+            </figure>
+            <article class="content-card"><h3><span class="number">1</span>Read the weather summary</h3><p>The weather graph starts with the main temperature range and conditions recorded during the journey. Use it to see whether the day warmed, cooled, cleared, or became windier as stops changed.</p></article>
+          </div>
+          <div class="weather-elevation-step">
+            <figure class="insight-example-card">
+              <div class="phone-frame">
+                <img class="theme-shot-light" src="../assets/images/screenshots/waterfront-golden-hour/insights-weather-detail-light.png" alt="Weather graph detail in light mode after selecting a stop number, showing the selected stop and its weather detail cards.">
+                <img class="theme-shot-dark" src="../assets/images/screenshots/waterfront-golden-hour/insights-weather-detail-dark.png" alt="Weather graph detail in dark mode after selecting a stop number, showing the selected stop and its weather detail cards.">
+              </div>
+              <figcaption>Weather detail</figcaption>
+            </figure>
+            <article class="content-card"><h3><span class="number">2</span>Tap a weather stop number</h3><p>Numbered stop badges connect the graph to the journey timeline. Tap a stop number to see the weather recorded for that stop, including temperature, condition, wind, and the stop name. Tap the selected stop again to return to the summary.</p></article>
+          </div>
+          <div class="weather-elevation-step">
+            <figure class="insight-example-card">
+              <div class="phone-frame">
+                <img class="theme-shot-light" src="../assets/images/screenshots/waterfront-golden-hour/insights-elevation-summary-light.png" alt="Elevation graph summary in light mode showing altitude, climb, descent, and tappable stop and time records.">
+                <img class="theme-shot-dark" src="../assets/images/screenshots/waterfront-golden-hour/insights-elevation-summary-dark.png" alt="Elevation graph summary in dark mode showing altitude, climb, descent, and tappable stop and time records.">
+              </div>
+              <figcaption>Elevation summary</figcaption>
+            </figure>
+            <article class="content-card"><h3><span class="number">3</span>Read the elevation summary</h3><p>The elevation graph begins with route-level stats such as high point, low point, climb, and descent. These summarize the vertical effort before you inspect individual measurements.</p></article>
+          </div>
+          <div class="weather-elevation-step">
+            <figure class="insight-example-card">
+              <div class="phone-frame">
+                <img class="theme-shot-light" src="../assets/images/screenshots/waterfront-golden-hour/insights-elevation-detail-light.png" alt="Elevation graph detail in light mode after selecting a record, showing selected stop altitude and time details.">
+                <img class="theme-shot-dark" src="../assets/images/screenshots/waterfront-golden-hour/insights-elevation-detail-dark.png" alt="Elevation graph detail in dark mode after selecting a record, showing selected stop altitude and time details.">
+              </div>
+              <figcaption>Elevation detail</figcaption>
+            </figure>
+            <article class="content-card"><h3><span class="number">4</span>Tap an elevation record</h3><p>Elevation uses both stop numbers and time records. Tap a stop number for stop-specific altitude, or tap a time record to see the selected measurement and why it matters, such as highest point, lowest point, climb, or descent. Tap the selected stop or record again to return to the summary.</p></article>
+          </div>
         </div>
       </section>
       <section class="page-section" id="questions" aria-labelledby="questions-title">

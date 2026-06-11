@@ -402,7 +402,7 @@ h1 {
 }
 
 .privacy-note {
-  margin: 6px 0 52px;
+  margin: 6px auto 52px;
   padding: 20px 22px;
   border-left: 4px solid var(--sun);
   background: color-mix(in srgb, var(--sun) 14%, transparent);
