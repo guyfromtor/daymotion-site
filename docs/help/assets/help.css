@@ -17,6 +17,25 @@
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
 }
 
+.insight-example-card {
+  margin: 0;
+}
+
+.insight-example-card .phone-frame {
+  max-width: min(100%, 300px);
+  margin: 0 auto;
+}
+
+.insight-example-card figcaption {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 * {
   box-sizing: border-box;
 }
