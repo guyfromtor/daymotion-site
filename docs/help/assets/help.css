@@ -43,11 +43,14 @@
 html {
   background: var(--bg);
   color: var(--ink);
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
   min-width: 320px;
+  max-width: 100%;
+  overflow-x: hidden;
   background:
     radial-gradient(circle at 15% 12%, rgba(91, 163, 217, 0.22), transparent 30%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.58), rgba(255, 255, 255, 0) 34%),
