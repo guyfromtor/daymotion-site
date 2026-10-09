@@ -265,6 +265,22 @@ h1 {
   bottom: 6%;
 }
 
+.journey-part-menu-shot .callout-route {
+  left: 21%;
+  top: 12%;
+}
+
+.journey-part-menu-shot .callout-stops {
+  right: 9%;
+  top: 20%;
+}
+
+.journey-part-menu-shot .callout-status {
+  left: 21%;
+  top: 27%;
+  bottom: auto;
+}
+
 .page-section + .page-section {
   margin-top: clamp(40px, 7vw, 84px);
 }
