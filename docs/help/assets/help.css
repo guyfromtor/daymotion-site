@@ -265,6 +265,33 @@ h1 {
   bottom: 6%;
 }
 
+.live-map-shot .callout-route { left: 29%; top: 51%; }
+.live-map-shot .callout-stops { right: 19%; top: 43%; }
+.live-map-shot .callout-status { left: 18%; bottom: 21%; }
+
+.stops-shot .callout-stops { left: 0; right: auto; top: 44%; }
+.stops-shot .callout-route { left: auto; right: 0; top: 46%; }
+.stops-shot .callout-status { left: auto; right: 0; bottom: 44%; }
+.stops-shot .callout-tabs { right: 0; bottom: 26%; }
+
+.photos-shot .callout-route { left: 0; top: 24%; }
+.photos-shot .callout-stops { right: 0; top: 24%; }
+.photos-shot .callout-status { left: auto; right: 0; bottom: 48%; }
+.photos-shot .callout-tabs { right: 27%; top: 16%; bottom: auto; }
+
+.journal-shot .callout-stops { left: 0; right: auto; top: 25%; }
+.journal-shot .callout-route { left: auto; right: 0; top: 43%; }
+.journal-shot .callout-status { left: 0; bottom: 13%; }
+
+.insights-shot .callout-route { left: auto; right: 0; top: 13%; }
+.insights-shot .callout-stops { right: 0; top: 35%; }
+.insights-shot .callout-status { left: 0; bottom: 32%; }
+.insights-shot .callout-tabs { right: 27%; top: 19%; bottom: auto; }
+
+.journey-parts-settings-shot .callout-route { left: 56%; top: 25%; }
+.journey-parts-settings-shot .callout-status { left: 84%; top: 25%; bottom: auto; }
+.journey-parts-library-shot .callout-stops { right: 0; top: 38%; }
+
 .journey-part-menu-shot .callout-route {
   left: 64%;
   top: 12%;

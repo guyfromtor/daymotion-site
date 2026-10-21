@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="DayMotion Map help for route shape, stop markers, tracking controls, zoom, position, and the camera button.">
+    <meta name="description" content="Use Live Map for recording controls and the Journey Map facet to review routes, weather, and dated legs.">
     <title>Map Help - DayMotion</title>
     <link rel="stylesheet" href="../assets/help.css">
   </head>
@@ -25,17 +25,18 @@
         <div>
           <p class="eyebrow">Map Help</p>
           <h1 id="page-title">Follow the shape of a journey.</h1>
-          <p class="lede">The Map shows where DayMotion recorded movement, where stops were captured, and whether the journey is active, paused, stopped, or being reviewed later.</p>
+          <p class="lede">Use the <strong>Live Map</strong> bottom tab for recording and map controls. Open a journey’s <strong>Map</strong> facet to review its route, weather strip, and dated travel legs.</p>
           <div class="hero-actions" aria-label="Primary help actions">
-            <a class="button-link primary" href="#map-controls">Map controls</a>
+            <a class="button-link primary" href="#map-controls">Live Map controls</a>
+            <a class="button-link" href="#journey-map">Journey Map</a>
             <a class="button-link" href="#questions">Common questions</a>
           </div>
         </div>
 
-        <figure class="phone-stage annotated-map" aria-label="Annotated DayMotion Map screenshot">
+        <figure class="phone-stage annotated-map live-map-shot" aria-label="Annotated DayMotion Live Map screenshot">
           <div class="phone-frame">
-            <img class="theme-shot-light" src="../assets/images/screenshots/waterfront-golden-hour/map-light.png" alt="DayMotion Map in light mode showing the Waterfront Golden Hour route with four numbered stops.">
-            <img class="theme-shot-dark" src="../assets/images/screenshots/waterfront-golden-hour/map-dark.png" alt="DayMotion Map in dark mode showing the Waterfront Golden Hour route with four numbered stops.">
+            <img class="theme-shot-light" src="../assets/images/screenshots/waterfront-golden-hour/map-light.png" alt="DayMotion Live Map in light mode showing the Waterfront Golden Hour route with four numbered stops and the Live Map bottom tab selected.">
+            <img class="theme-shot-dark" src="../assets/images/screenshots/waterfront-golden-hour/map-dark.png" alt="DayMotion Live Map in dark mode showing the Waterfront Golden Hour route with four numbered stops and the Live Map bottom tab selected.">
           </div>
           <span class="callout callout-route" aria-hidden="true">1</span>
           <span class="callout callout-stops" aria-hidden="true">2</span>
@@ -45,7 +46,7 @@
 
       <section class="page-section" aria-labelledby="quick-title">
         <p class="eyebrow">What You Can See Here</p>
-        <h2 id="quick-title">The map combines route, stops, and recording controls.</h2>
+        <h2 id="quick-title">Live Map combines route, stops, and recording controls.</h2>
         <div class="quick-grid">
           <article class="quick-card"><strong>Route shape</strong><p>The blue line follows the recorded path instead of drawing straight lines between stops.</p></article>
           <article class="quick-card"><strong>Stop markers</strong><p>Numbered markers show the order DayMotion captured each stop.</p></article>
@@ -57,7 +58,7 @@
       </section>
 
       <section class="page-section" id="map-controls" aria-labelledby="controls-title">
-        <p class="eyebrow">Map Controls</p>
+        <p class="eyebrow">Live Map Controls</p>
         <h2 id="controls-title">Use the controls to record, inspect, and add photos.</h2>
         <figure class="control-strip-figure" aria-label="Map control bar">
           <img class="theme-shot-light" src="../assets/images/screenshots/waterfront-golden-hour/map-controls-light.png" alt="Light mode Map controls for an active journey, showing zoom in, zoom out, position, camera, and help buttons.">
@@ -81,7 +82,40 @@
           <article class="quick-card"><strong>Route</strong><p>The route line shows captured movement across the journey. Curves and intermediate points preserve the shape of travel.</p></article>
           <article class="quick-card"><strong>Stops</strong><p>Stops are ordered from first to last. Open the Stops facet in Journey to review time, weather, mood, journal text, and photos.</p></article>
           <article class="quick-card"><strong>Photos</strong><p>Use the camera button when a photo should belong to the active journey, especially while reviewing the map context.</p></article>
-          <article class="quick-card"><strong>Navigation</strong><p>The bottom tabs keep Map close to Journey, Library, Settings, and related detail screens.</p></article>
+          <article class="quick-card"><strong>Navigation</strong><p>The bottom tabs are Home, Live Map, Journey, Library, and Settings. Inside a journey, Map is one of the review facets alongside Insights, Stops, Journal, and Photos.</p></article>
+        </div>
+      </section>
+
+      <section class="page-section split" id="journey-map" aria-labelledby="journey-map-title">
+        <div class="section-heading">
+          <p class="eyebrow">Journey · Map</p>
+          <h2 id="journey-map-title">Review the route, weather, and legs together.</h2>
+          <p>Open a journey from Library, or use the Journey tab, then choose the Map facet. The route overview sits above a weather strip and a list of legs between stops.</p>
+          <div class="content-stack">
+            <article class="content-card"><h3>Weather along the journey</h3><p>The strip shows recorded conditions, temperatures, and times. Similar readings are condensed so changes are easier to spot. Swipe horizontally when more readings are available.</p></article>
+            <article class="content-card"><h3>Dated leg cards</h3><p>Each leg connects two stops and shows its duration, distance, speed, and date and time range. Scroll the leg list to review the rest of the journey.</p></article>
+          </div>
+        </div>
+        <figure class="phone-stage" aria-label="Journey Map overview with weather and dated legs">
+          <div class="phone-frame">
+            <img class="theme-shot-light" src="../assets/images/screenshots/waterfront-golden-hour/journey-map-light.png" alt="Journey Map in light mode showing the Waterfront Golden Hour route, recorded weather strip, and leg cards with dates and times.">
+            <img class="theme-shot-dark" src="../assets/images/screenshots/waterfront-golden-hour/journey-map-dark.png" alt="Journey Map in dark mode showing the Waterfront Golden Hour route, recorded weather strip, and leg cards with dates and times.">
+          </div>
+        </figure>
+      </section>
+
+      <section class="page-section split" aria-labelledby="selected-leg-title">
+        <figure class="phone-stage" aria-label="Journey Map with one leg selected">
+          <div class="phone-frame">
+            <img class="theme-shot-light" src="../assets/images/screenshots/waterfront-golden-hour/journey-map-leg-light.png" alt="Journey Map in light mode with a leg selected, the map focused on that leg, and weather readings for its endpoint stops.">
+            <img class="theme-shot-dark" src="../assets/images/screenshots/waterfront-golden-hour/journey-map-leg-dark.png" alt="Journey Map in dark mode with a leg selected, the map focused on that leg, and weather readings for its endpoint stops.">
+          </div>
+        </figure>
+        <div class="section-heading">
+          <p class="eyebrow">Select A Leg</p>
+          <h2 id="selected-leg-title">Focus on the travel between two stops.</h2>
+          <p>Tap a leg card to focus the map on that section. The weather strip updates to the two endpoint stops and any recorded weather changes between them.</p>
+          <p>Tap the selected leg again to return to the whole-journey overview. If an endpoint has no recorded weather, the strip marks it as unavailable.</p>
         </div>
       </section>
 
@@ -100,7 +134,8 @@
         <p class="eyebrow">Questions</p>
         <h2 id="questions-title">Common questions</h2>
         <div class="faq-list">
-          <article class="faq-item"><h3>What is the camera button for?</h3><p>It lets you capture a photo from the Map while preserving the journey context. Use it when the photo belongs to the place or route you are recording.</p></article>
+          <article class="faq-item"><h3>What is the difference between Live Map and the Map facet?</h3><p>Live Map is a bottom tab with recording and location controls. The Map facet is inside a journey and brings its route, recorded weather, and dated leg cards together for review.</p></article>
+          <article class="faq-item"><h3>What is the camera button for?</h3><p>It lets you capture a photo from Live Map while preserving the journey context. Use it when the photo belongs to the place or route you are recording.</p></article>
           <article class="faq-item"><h3>What is the difference between pause and stop?</h3><p>Pause keeps the journey available while DayMotion stops recording new movement. Stop ends the active journey so you can review it as a completed memory.</p></article>
           <article class="faq-item"><h3>Why use zoom controls?</h3><p>Zoom in to inspect nearby stops or route detail. Zoom out when you want the full shape of the journey.</p></article>
           <article class="faq-item"><h3>What does the position button do?</h3><p>It brings the map back to your current area or active tracking context after you have moved the map manually.</p></article>
