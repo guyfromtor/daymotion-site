@@ -1,0 +1,25 @@
+{
+  "defaultEdition": "1",
+  "topics": [
+    "home",
+    "map",
+    "stops",
+    "photos",
+    "insights",
+    "journal",
+    "tracking",
+    "journey-parts",
+    "moods",
+    "places",
+    "sharing-export"
+  ],
+  "editions": {
+    "1": {
+      "languages": {
+        "en": {
+          "complete": true
+        }
+      }
+    }
+  }
+}
