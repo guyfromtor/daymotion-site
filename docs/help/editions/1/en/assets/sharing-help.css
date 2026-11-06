@@ -1,0 +1,54 @@
+/* Sharing examples reuse the Help typography, palette, cards, and spacing. */
+.sharing-help .sharing-figure { margin: 0; min-width: 0; }
+.sharing-help .sharing-figure img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.sharing-help figcaption,
+.sharing-help .sharing-note {
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+.sharing-help .sharing-intro { max-width: 46rem; color: var(--muted); }
+.sharing-help .sharing-examples,
+.sharing-help .sharing-two-column {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 30px);
+  margin-top: 28px;
+  align-items: start;
+}
+.sharing-help .sharing-methods { grid-template-columns: 1.35fr 1fr; }
+.sharing-help .content-card p + p { margin-top: 16px; }
+.sharing-help .sharing-viewer {
+  margin-top: 28px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  overflow: hidden;
+}
+.sharing-help summary {
+  padding: 18px 22px;
+  font-weight: 700;
+  cursor: pointer;
+  min-height: 44px;
+}
+.sharing-help summary:focus-visible { outline: 3px solid var(--brand); outline-offset: -3px; }
+.sharing-help .sharing-viewer .sharing-note { margin: 0; padding: 0 22px 18px; }
+.sharing-help iframe { display: block; width: 100%; height: 720px; border: 0; background: #080a0d; }
+.sharing-help .sharing-viewer h3 { margin: 22px; font-size: 20px; }
+.sharing-help .sharing-email iframe { height: 560px; background: #f9f9fe; }
+.sharing-help .sharing-steps { margin: 18px 0 0; padding-left: 1.3rem; color: var(--muted); }
+.sharing-help .sharing-steps li + li { margin-top: 14px; }
+.sharing-help .sharing-credits { color: var(--muted); font-size: 14px; }
+.sharing-help .sharing-credits summary { padding-left: 0; }
+.sharing-help .sharing-credits li + li { margin-top: 10px; }
+@media (max-width: 860px) {
+  .sharing-help .sharing-examples,
+  .sharing-help .sharing-two-column { grid-template-columns: 1fr; }
+  .sharing-help iframe { height: 640px; }
+}

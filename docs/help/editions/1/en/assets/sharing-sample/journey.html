@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Waterfront Golden Hour</title>
+<style>
+:root {
+  --bg: #05070b;
+  --surface: #0e141f;
+  --fg: #F2F2F7;
+  --muted: #8E95A8;
+  --soft: rgba(142,149,168,0.68);
+  --border: rgba(255,255,255,0.12);
+  --border-strong: rgba(255,255,255,0.22);
+  --accent: #60A5FA;
+  --amber: #FF9800;
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+  --space-2: 12px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 36px;
+  --space-6: 56px;
+  --space-7: 84px;
+  --route-map-aspect: 4 / 5;
+  --font-display: "Iowan Old Style", "Charter", Georgia, serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 70% 18%, rgba(10,132,255,0.15), transparent 28rem),
+    linear-gradient(180deg, #030509 0%, var(--bg) 34%, #070910 100%);
+  color: var(--fg);
+  font-family: var(--font-body);
+  line-height: 1.5;
+}
+a { color: inherit; text-decoration: none; }
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: var(--space-4);
+  padding: 14px clamp(18px, 4vw, 56px);
+  background: rgba(5,7,11,0.84);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(18px);
+}
+.brand { display: inline-flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 700; letter-spacing: 0.02em; }
+.brand-mark { width: 22px; height: 22px; border: 2px solid var(--accent); border-radius: 50%; position: relative; box-shadow: 0 0 18px rgba(10,132,255,0.34); }
+.brand-mark::after { content: ""; position: absolute; width: 7px; height: 7px; right: 2px; top: 2px; background: var(--amber); border-radius: 50%; }
+.header-title { min-width: 0; color: var(--muted); font-size: 13px; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.header-title strong { color: var(--fg); font-weight: 600; }
+.nav-links { justify-self: end; display: flex; align-items: center; gap: 18px; color: var(--muted); font-size: 13px; }
+.hero {
+  min-height: calc(100vh - 54px);
+  display: grid;
+  grid-template-columns: minmax(0, 0.84fr) minmax(330px, 0.42fr);
+  gap: clamp(28px, 4vw, 64px);
+  align-items: end;
+  padding: clamp(28px, 5vw, 70px) clamp(18px, 4vw, 56px) 0;
+  border-bottom: 1px solid var(--border);
+}
+.map-stage { min-height: 68vh; display: flex; align-items: center; padding-bottom: clamp(28px, 4vw, 54px); }
+.route-map {
+  width: 100%;
+  aspect-ratio: var(--route-map-aspect);
+  min-height: 520px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(255,255,255,0.06), transparent 34%), var(--surface);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), 0 24px 80px rgba(0,0,0,0.35);
+}
+.route-map img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.route-map-unavailable { display: grid; place-items: center; color: var(--muted); font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; }
+.hero-copy { padding-bottom: clamp(30px, 6vw, 82px); }
+.map-frame-landscape .hero {
+  grid-template-columns: 1fr;
+  align-items: start;
+  gap: var(--space-4);
+  padding-bottom: clamp(28px, 4vw, 54px);
+}
+.map-frame-landscape .map-stage {
+  display: grid;
+  justify-items: center;
+  min-height: auto;
+  padding-bottom: 0;
+}
+.map-frame-landscape .route-map {
+  width: min(100%, calc(68vh * 5 / 4));
+  min-height: 0;
+}
+.map-frame-landscape .hero-copy {
+  max-width: 68rem;
+  padding-bottom: 0;
+}
+.map-frame-landscape h1 {
+  max-width: 14ch;
+}
+.eyebrow { display: inline-flex; align-items: center; gap: 10px; margin: 0 0 var(--space-3); color: var(--amber); font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; }
+.eyebrow::before { content: ""; width: 38px; height: 1px; background: var(--amber); }
+h1, h2, h3 { margin: 0; font-family: var(--font-display); font-weight: 600; line-height: 0.98; }
+h1 { font-size: clamp(54px, 7vw, 118px); letter-spacing: -0.04em; max-width: 8ch; }
+h2 { font-size: clamp(38px, 5vw, 76px); letter-spacing: -0.035em; }
+h3 { font-size: clamp(28px, 3vw, 44px); letter-spacing: -0.025em; }
+.summary { max-width: 34rem; margin: var(--space-4) 0 0; color: var(--muted); font-size: clamp(18px, 1.5vw, 22px); }
+.date-line { margin-top: var(--space-5); color: var(--fg); font-size: 15px; }
+.stats-strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; max-width: 1320px; margin: 0 auto; padding: var(--space-4) clamp(18px, 4vw, 56px); }
+.stat { padding: var(--space-4); background: rgba(255,255,255,0.035); border: 1px solid var(--border); }
+.stat:first-child { border-radius: var(--radius-md) 0 0 var(--radius-md); }
+.stat:last-child { border-radius: 0 var(--radius-md) var(--radius-md) 0; }
+.stat span, .moments-title, .insight-card span { display: block; color: var(--soft); font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; }
+.stat strong { display: block; margin-top: 6px; color: var(--fg); font-size: clamp(20px, 2vw, 28px); font-weight: 650; }
+.timeline-intro { max-width: 1320px; margin: 0 auto; padding: var(--space-7) clamp(18px, 4vw, 56px) var(--space-5); display: grid; grid-template-columns: minmax(0, 0.68fr) minmax(240px, 0.32fr); gap: var(--space-6); align-items: end; }
+.timeline-intro p { margin: var(--space-3) 0 0; color: var(--muted); font-size: 18px; max-width: 44rem; }
+.route-caption { color: var(--soft); font-family: var(--font-mono); font-size: 12px; line-height: 1.8; text-transform: uppercase; letter-spacing: 0.08em; }
+.timeline { position: relative; max-width: 1320px; margin: 0 auto; padding: 0 clamp(18px, 4vw, 56px) var(--space-7); }
+.timeline::before { content: ""; position: absolute; top: 0; bottom: var(--space-7); left: 50%; width: 1px; background: linear-gradient(var(--accent), rgba(10,132,255,0.14)); }
+.stop { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(46px, 7vw, 104px); margin-bottom: clamp(58px, 9vw, 126px); }
+.stop:nth-child(even) .stop-card { grid-column: 2; }
+.stop:nth-child(even) .stop-media { grid-column: 1; grid-row: 1; }
+.stop-pin { position: absolute; top: 20px; left: calc(50% - 22px); width: 44px; height: 44px; display: grid; place-items: center; color: #fff; background: var(--accent); border: 6px solid var(--bg); border-radius: 50%; font-family: var(--font-mono); font-size: 13px; font-weight: 800; box-shadow: 0 0 28px rgba(10,132,255,0.42); }
+.stop-card { padding-top: 10px; }
+.stop-meta { display: flex; flex-wrap: wrap; gap: 10px; margin: var(--space-3) 0; }
+.pill { display: inline-flex; align-items: center; min-height: 32px; padding: 6px 10px; border: 1px solid var(--border); border-radius: 999px; color: var(--fg); background: rgba(255,255,255,0.045); font-size: 13px; }
+.pill.mood { border-color: rgba(246,180,91,0.34); color: #ffe0b1; background: rgba(246,180,91,0.1); }
+.subtitle { margin: 12px 0 0; color: var(--amber); font-size: 16px; }
+.journal { margin: var(--space-4) 0 0; color: rgba(245,248,255,0.88); font-family: var(--font-display); font-size: clamp(24px, 2.4vw, 36px); line-height: 1.18; letter-spacing: -0.02em; }
+.weather { margin-top: var(--space-4); color: var(--muted); font-size: 15px; }
+.stop-media { align-self: start; }
+.moments-title { margin: 0 0 var(--space-2); }
+.photo-grid { display: grid; gap: var(--space-2); }
+.photos-1 { grid-template-columns: 1fr; }
+.photos-2, .photos-3, .photos-many { grid-template-columns: 1.35fr 0.85fr; }
+.photos-3 .photo:nth-child(3) { grid-column: 2; }
+.photos-many { grid-template-columns: 1.2fr 0.8fr 0.8fr; }
+.photos-many .photo:first-child { grid-row: span 2; min-height: 430px; }
+.photo { display: block; min-height: 190px; border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; background-color: var(--surface); background-size: cover; background-position: center; }
+.photo.hero-photo { min-height: 340px; }
+.photo-fallback { display: inline-block; margin: 14px; color: rgba(245,248,255,0.82); font-size: 13px; }
+.insights { padding: var(--space-7) clamp(18px, 4vw, 56px); background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0)); border-top: 1px solid var(--border); }
+.insights-inner { max-width: 1320px; margin: 0 auto; }
+.insight-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-3); margin-top: var(--space-5); }
+.insight-card { min-height: 230px; padding: var(--space-4); border: 1px solid var(--border); border-radius: var(--radius-md); background: rgba(255,255,255,0.035); }
+.insight-card span { color: var(--amber); }
+.insight-card strong { display: block; margin-top: var(--space-4); font-family: var(--font-display); font-size: clamp(30px, 3vw, 46px); line-height: 1.05; letter-spacing: -0.03em; }
+.insight-card p { margin: var(--space-3) 0 0; color: var(--muted); }
+.footer { display: flex; justify-content: center; padding: var(--space-5) var(--space-4) var(--space-6); color: var(--soft); border-top: 1px solid var(--border); }
+.footer strong { color: var(--fg); font-weight: 650; }
+@media (max-width: 1020px) {
+  .site-header { grid-template-columns: 1fr auto; }
+  .header-title { display: none; }
+  .hero, .timeline-intro, .stop { grid-template-columns: 1fr; }
+  .map-stage { min-height: auto; padding-bottom: 0; }
+  .route-map { min-height: 460px; }
+  .hero-copy { padding-bottom: var(--space-6); }
+  h1 { max-width: 11ch; }
+  .timeline::before { left: 38px; }
+  .stop { padding-left: 76px; gap: var(--space-4); }
+  .stop:nth-child(even) .stop-card, .stop:nth-child(even) .stop-media { grid-column: auto; grid-row: auto; }
+  .stop-pin { left: 16px; }
+}
+@media (max-width: 680px) {
+  .site-header { padding: 12px 16px; }
+  .nav-links { gap: 12px; font-size: 12px; }
+  .hero { min-height: auto; padding: 18px 14px 0; }
+  .route-map { min-height: 360px; border-radius: var(--radius-md); }
+  .route-map img { border-radius: var(--radius-md); }
+  .stats-strip { grid-template-columns: 1fr; padding: var(--space-3) 14px; }
+  .stat, .stat:first-child, .stat:last-child { border-radius: var(--radius-sm); }
+  .timeline-intro, .timeline, .insights { padding-left: 14px; padding-right: 14px; }
+  .stop { padding-left: 54px; margin-bottom: var(--space-6); }
+  .timeline::before { left: 28px; }
+  .stop-pin { left: 7px; width: 40px; height: 40px; }
+  .photos-2, .photos-3, .photos-many { grid-template-columns: 1fr; }
+  .photos-many .photo:first-child { min-height: 300px; }
+  .photo, .photo.hero-photo { min-height: 260px; }
+  .insight-grid { grid-template-columns: 1fr; }
+}
+</style>
+<meta name="help-edition" content="1"><meta name="help-language" content="en"><script type="module" src="/daymotion-site/help/routing.mjs"></script></head>
+<body>
+<main class="journey-page map-frame-portrait">
+  <header class="site-header" aria-label="Journey export page header">
+    <a class="brand" href="#route" aria-label="DayMotion route">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>DayMotion</span>
+    </a>
+    <div class="header-title"><strong>Waterfront Golden Hour</strong> · Friday, June 5, 2026</div>
+    <nav class="nav-links" aria-label="Journey sections">
+      <a href="#route">Route</a>
+      <a href="#stops">Stops</a>
+      <a href="#insights">Insights</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="route" aria-label="Waterfront Golden Hour route">
+    <div class="map-stage">
+      <figure class="route-map" aria-label="Static route map for Waterfront Golden Hour">
+  <img src="c621cc72e3fa.jpg" alt="Route map for Waterfront Golden Hour"/>
+</figure>
+    </div>
+    <div class="hero-copy">
+      <p class="eyebrow">Journey</p>
+      <h1>Waterfront Golden Hour</h1>
+      <p class="summary">Waterfront Golden Hour covered 5 stops across 132.0 km, with 3h 26min of active travel. The most comfortable weather was 23°C, sunny intervals at Harbourfront Centre Boardwalk, while the least comfortable weather was 18°C, clear at Niagara Falls — Table Rock Lookout.</p>
+      <p class="date-line">Friday, June 5, 2026</p>
+    </div>
+  </section>
+
+  <section class="stats-strip" aria-label="Compact journey stats">
+    <div class="stat"><span>Distance</span><strong>132.0 km</strong></div>
+    <div class="stat"><span>Active duration</span><strong>3h 26min</strong></div>
+    <div class="stat"><span>Stops</span><strong>5</strong></div>
+  </section>
+
+  <section class="timeline-intro" id="stops">
+    <div>
+      <p class="eyebrow">Stops</p>
+      <h2>The day, held in pauses.</h2>
+      <p>Each Stop keeps the memory readable: where it felt different, what the weather was doing, what mood stayed behind, and the Captured Moments that belonged to that place.</p>
+    </div>
+  </section>
+
+  <section class="timeline" aria-label="Journey stop timeline">
+    <article class="stop">
+  <span class="stop-pin">1</span>
+  <div class="stop-card">
+    <h3>Love Park Coffee Pause</h3>
+
+    <div class="stop-meta">
+      <span class="pill">3:22 PM · 16min</span>
+      <span class="pill mood">😌 Calm</span>
+    </div>
+    <p class="journal">&ldquo;Started by the water after coffee. The boardwalk was busy but the breeze made it feel unhurried.&rdquo;</p>
+    <p class="weather">Weather: ⛅ 23°C • Partly cloudy • 10 km/h SW</p>
+  </div>
+  <div class="stop-media">
+  <p class="moments-title">Captured Moments</p>
+  <style>
+#stop-1-moments .photo-1 { background-image: url("0175ea242697.jpg"); }
+#stop-1-moments .photo-2 { background-image: url("2cdb8e0ab23a.jpg"); }
+#stop-1-moments .photo-3 { background-image: url("a5927d271ac8.jpg"); }
+</style>
+<div id="stop-1-moments" class="photo-grid photos-3"><a class="photo hero-photo photo-1" href="0175ea242697.jpg" download="stop-1-captured-moment-1.jpg" aria-label="Captured Moment 1">
+  <span class="photo-fallback">Captured Moment 1</span>
+</a><a class="photo photo-2" href="2cdb8e0ab23a.jpg" download="stop-1-captured-moment-2.jpg" aria-label="Captured Moment 2">
+  <span class="photo-fallback">Captured Moment 2</span>
+</a><a class="photo photo-3" href="a5927d271ac8.jpg" download="stop-1-captured-moment-3.jpg" aria-label="Captured Moment 3">
+  <span class="photo-fallback">Captured Moment 3</span>
+</a></div>
+</div>
+</article>
+<article class="stop">
+  <span class="stop-pin">2</span>
+  <div class="stop-card">
+    <h3>Harbourfront Centre Boardwalk</h3>
+
+    <div class="stop-meta">
+      <span class="pill">3:52 PM · 25min</span>
+      <span class="pill mood">✨ Inspired</span>
+    </div>
+    <p class="journal">&ldquo;Stopped near the boardwalk to watch boats move through the harbour. This is the part of the walk that made the route feel like a memory.&rdquo;</p>
+    <p class="weather">Weather: ☀️ 23°C • Sunny intervals • 12 km/h SW</p>
+  </div>
+  <div class="stop-media">
+  <p class="moments-title">Captured Moments</p>
+  <style>
+#stop-2-moments .photo-1 { background-image: url("ddbcd28ab65e.jpg"); }
+#stop-2-moments .photo-2 { background-image: url("1148040615b1.jpg"); }
+#stop-2-moments .photo-3 { background-image: url("f778bf8410e9.jpg"); }
+</style>
+<div id="stop-2-moments" class="photo-grid photos-3"><a class="photo hero-photo photo-1" href="ddbcd28ab65e.jpg" download="stop-2-captured-moment-1.jpg" aria-label="Captured Moment 1">
+  <span class="photo-fallback">Captured Moment 1</span>
+</a><a class="photo photo-2" href="1148040615b1.jpg" download="stop-2-captured-moment-2.jpg" aria-label="Captured Moment 2">
+  <span class="photo-fallback">Captured Moment 2</span>
+</a><a class="photo photo-3" href="f778bf8410e9.jpg" download="stop-2-captured-moment-3.jpg" aria-label="Captured Moment 3">
+  <span class="photo-fallback">Captured Moment 3</span>
+</a></div>
+</div>
+</article>
+<article class="stop">
+  <span class="stop-pin">3</span>
+  <div class="stop-card">
+    <h3>Toronto Music Garden</h3>
+
+    <div class="stop-meta">
+      <span class="pill">4:36 PM · 28min</span>
+      <span class="pill mood">🌿 Relaxed</span>
+    </div>
+    <p class="journal">&ldquo;Added this stop manually because the garden felt different from the boardwalk: quieter, greener, and slower.&rdquo;</p>
+    <p class="weather">Weather: ☀️ 22°C • Sunny intervals • 14 km/h SW</p>
+  </div>
+  <div class="stop-media">
+  <p class="moments-title">Captured Moments</p>
+  <style>
+#stop-3-moments .photo-1 { background-image: url("cce9de2343e0.jpg"); }
+#stop-3-moments .photo-2 { background-image: url("271a1e876551.jpg"); }
+#stop-3-moments .photo-3 { background-image: url("1db5bf0f4770.jpg"); }
+</style>
+<div id="stop-3-moments" class="photo-grid photos-3"><a class="photo hero-photo photo-1" href="cce9de2343e0.jpg" download="stop-3-captured-moment-1.jpg" aria-label="Captured Moment 1">
+  <span class="photo-fallback">Captured Moment 1</span>
+</a><a class="photo photo-2" href="271a1e876551.jpg" download="stop-3-captured-moment-2.jpg" aria-label="Captured Moment 2">
+  <span class="photo-fallback">Captured Moment 2</span>
+</a><a class="photo photo-3" href="1db5bf0f4770.jpg" download="stop-3-captured-moment-3.jpg" aria-label="Captured Moment 3">
+  <span class="photo-fallback">Captured Moment 3</span>
+</a></div>
+</div>
+</article>
+<article class="stop">
+  <span class="stop-pin">4</span>
+  <div class="stop-card">
+    <h3>Trillium Park Summit</h3>
+
+    <div class="stop-meta">
+      <span class="pill">5:32 PM · 26min</span>
+      <span class="pill mood">😊 Joyful</span>
+    </div>
+    <p class="journal">&ldquo;Paused above the waterfront for one last Toronto skyline view, then walked back to the car for the drive to Niagara Falls.&rdquo;</p>
+    <p class="weather">Weather: ☀️ 21°C • Clear • 16 km/h SSW</p>
+  </div>
+  <div class="stop-media">
+  <p class="moments-title">Captured Moments</p>
+  <style>
+#stop-4-moments .photo-1 { background-image: url("06cf63686e80.jpg"); }
+#stop-4-moments .photo-2 { background-image: url("0754731e1e3a.jpg"); }
+#stop-4-moments .photo-3 { background-image: url("c6683d006b28.jpg"); }
+</style>
+<div id="stop-4-moments" class="photo-grid photos-3"><a class="photo hero-photo photo-1" href="06cf63686e80.jpg" download="stop-4-captured-moment-1.jpg" aria-label="Captured Moment 1">
+  <span class="photo-fallback">Captured Moment 1</span>
+</a><a class="photo photo-2" href="0754731e1e3a.jpg" download="stop-4-captured-moment-2.jpg" aria-label="Captured Moment 2">
+  <span class="photo-fallback">Captured Moment 2</span>
+</a><a class="photo photo-3" href="c6683d006b28.jpg" download="stop-4-captured-moment-3.jpg" aria-label="Captured Moment 3">
+  <span class="photo-fallback">Captured Moment 3</span>
+</a></div>
+</div>
+</article>
+<article class="stop">
+  <span class="stop-pin">5</span>
+  <div class="stop-card">
+    <h3>Niagara Falls — Table Rock Lookout</h3>
+
+    <div class="stop-meta">
+      <span class="pill">8:23 PM · 1h 47min</span>
+      <span class="pill mood">🤩 Awestruck</span>
+    </div>
+    <p class="journal">&ldquo;Drove around Lake Ontario on the Gardiner and QEW, parked near the Falls, and walked to Table Rock. Stayed to watch the Horseshoe Falls change from evening light to colourful illumination.&rdquo;</p>
+    <p class="weather">Weather: 🌤️ 18°C • Clear • 13 km/h SSW</p>
+  </div>
+  <div class="stop-media">
+  <p class="moments-title">Captured Moments</p>
+  <style>
+#stop-5-moments .photo-1 { background-image: url("114f2c42c9a6.jpg"); }
+#stop-5-moments .photo-2 { background-image: url("66dcdbbeba45.jpg"); }
+#stop-5-moments .photo-3 { background-image: url("6e878d1178ec.jpg"); }
+</style>
+<div id="stop-5-moments" class="photo-grid photos-3"><a class="photo hero-photo photo-1" href="114f2c42c9a6.jpg" download="stop-5-captured-moment-1.jpg" aria-label="Captured Moment 1">
+  <span class="photo-fallback">Captured Moment 1</span>
+</a><a class="photo photo-2" href="66dcdbbeba45.jpg" download="stop-5-captured-moment-2.jpg" aria-label="Captured Moment 2">
+  <span class="photo-fallback">Captured Moment 2</span>
+</a><a class="photo photo-3" href="6e878d1178ec.jpg" download="stop-5-captured-moment-3.jpg" aria-label="Captured Moment 3">
+  <span class="photo-fallback">Captured Moment 3</span>
+</a></div>
+</div>
+</article>
+  </section>
+
+  <section class="insights" id="insights" aria-label="Journey Insights">
+  <div class="insights-inner">
+    <p class="eyebrow">Journey Insights</p>
+    <h2>What the day kept returning to.</h2>
+    <div class="insight-grid">
+      <article class="insight-card">
+  <span>Most comfortable weather point</span>
+  <strong>Harbourfront Centre Boardwalk</strong>
+  <p>23°C, sunny intervals, during the most comfortable outdoor part of the journey.</p>
+</article><article class="insight-card">
+  <span>Longest stop</span>
+  <strong>Niagara Falls — Table Rock Lookout</strong>
+  <p>1h 47min spent here, making it the longest pause in the journey.</p>
+</article><article class="insight-card">
+  <span>Journey mood</span>
+  <strong>✨</strong>
+  <p>The Mood reflects 5 mood Stops: 😌 Love Park Coffee Pause · ✨ Harbourfront Centre Boardwalk · 🌿 Toronto Music Garden · 😊 Trillium Park Summit · 🤩 Niagara Falls — Table Rock Lookout</p>
+</article>
+    </div>
+  </div>
+</section>
+
+  <footer class="footer">
+    <span>Made with <strong>DayMotion</strong></span>
+  </footer>
+</main>
+</body>
+</html>
