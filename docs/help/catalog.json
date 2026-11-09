@@ -15,6 +15,11 @@
   ],
   "editions": {
     "1": {
+      "devices": [
+        "iphone",
+        "duo",
+        "ipad"
+      ],
       "languages": {
         "en": {
           "complete": true

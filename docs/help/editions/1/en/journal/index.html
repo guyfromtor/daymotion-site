@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Use DayMotion Journal to refine stop moods, notes, and map context.">
     <title>Journal Help - DayMotion</title>
+    <script src="../assets/help-device.js"></script>
     <link rel="stylesheet" href="../assets/help.css">
   <meta name="help-edition" content="1"><meta name="help-language" content="en"><script type="module" src="/daymotion-site/help/routing.mjs"></script></head>
   <body>
     <header class="site-header">
       <a class="brand-link" href="../index.html"><img src="../assets/images/daymotion-app-icon.png" alt="" width="34" height="34"><span>DayMotion Help</span></a>
+      <div data-help-device-selector></div>
       <nav class="header-nav" aria-label="Help navigation">
         <a href="../map/index.html">Map</a>
         <a href="../stops/index.html">Stops</a>
@@ -21,22 +23,75 @@
     </header>
 
     <main>
-      <section class="page-section hero" aria-labelledby="page-title">
+      <section class="page-section hero journal-intro" aria-labelledby="page-title">
         <div>
           <p class="eyebrow">Journal Help</p>
           <h1 id="page-title">Add the memory behind each stop.</h1>
           <p class="lede">Journal brings together stop timing, mood, map context, and notes so a place becomes easier to remember later.</p>
           <div class="hero-actions"><a class="button-link primary" href="#write-journal">Write journal notes</a><a class="button-link" href="#questions">Common questions</a></div>
         </div>
-        <figure class="phone-stage annotated-map journal-shot" aria-label="Annotated DayMotion Journal screenshot">
-          <div class="phone-frame">
-            <img class="theme-shot-light" src="../assets/images/screenshots/waterfront-golden-hour/journal-light.png" alt="DayMotion Journal screen in light mode showing a selected stop, mood, and journal text.">
-            <img class="theme-shot-dark" src="../assets/images/screenshots/waterfront-golden-hour/journal-dark.png" alt="DayMotion Journal screen in dark mode showing a selected stop, mood, and journal text.">
+      </section>
+
+      <section class="page-section journal-instructions" id="write-journal" aria-labelledby="write-title">
+        <div class="journal-step-group">
+          <figure class="phone-stage annotated-map journal-shot" aria-label="Annotated DayMotion Journal screenshot">
+            <div class="phone-frame">
+              <img class="theme-shot-light" src="../assets/images/screenshots/iphone/journal-light.webp" alt="iPhone: DayMotion Journal screen in light mode showing stop selection, map context, and mood controls."
+                data-help-src-iphone="../assets/images/screenshots/iphone/journal-light.webp"
+                data-help-alt-iphone="iPhone: DayMotion Journal screen in light mode showing stop selection, map context, and mood controls."
+                data-help-src-duo="../assets/images/screenshots/duo/journal-light.webp"
+                data-help-alt-duo="iPhone Duo: DayMotion Journal screen in light mode showing stop selection, map context, and mood controls."
+                data-help-src-ipad="../assets/images/screenshots/ipad/journal-light.webp"
+                data-help-alt-ipad="iPad: DayMotion Journal screen in light mode showing stop selection, map context, and mood controls.">
+              <img class="theme-shot-dark" src="../assets/images/screenshots/iphone/journal-dark.webp" alt="iPhone: DayMotion Journal screen in dark mode showing stop selection, map context, and mood controls."
+                data-help-src-iphone="../assets/images/screenshots/iphone/journal-dark.webp"
+                data-help-alt-iphone="iPhone: DayMotion Journal screen in dark mode showing stop selection, map context, and mood controls."
+                data-help-src-duo="../assets/images/screenshots/duo/journal-dark.webp"
+                data-help-alt-duo="iPhone Duo: DayMotion Journal screen in dark mode showing stop selection, map context, and mood controls."
+                data-help-src-ipad="../assets/images/screenshots/ipad/journal-dark.webp"
+                data-help-alt-ipad="iPad: DayMotion Journal screen in dark mode showing stop selection, map context, and mood controls.">
+            </div>
+            <span class="callout callout-stops" aria-hidden="true">1</span>
+            <span class="callout callout-route" aria-hidden="true">2</span>
+            <span class="callout callout-status" aria-hidden="true">3</span>
+          </figure>
+          <div class="content-stack">
+            <div class="section-heading">
+              <p class="eyebrow">Write Journal Notes</p>
+              <h2 id="write-title">Keep notes close to the stop they describe.</h2>
+              <p>Use Journal when a place needs more meaning than a title, timestamp, or photo can capture.</p>
+            </div>
+            <article class="content-card"><h3><span class="number">1</span>Choose a stop</h3><p>Use the stop chips to switch between places in the journey.</p></article>
+            <article class="content-card"><h3><span class="number">2</span>Confirm the context</h3><p>Review time, weather, mood rank, and map context before editing.</p></article>
+            <article class="content-card"><h3><span class="number">3</span>Add mood details</h3><p>Use mood and vibe tags to describe how the stop felt.</p></article>
           </div>
-          <span class="callout callout-stops" aria-hidden="true">1</span>
-          <span class="callout callout-route" aria-hidden="true">2</span>
-          <span class="callout callout-status" aria-hidden="true">3</span>
-        </figure>
+        </div>
+        <div class="journal-step-group journal-write-step">
+          <figure class="phone-stage journal-preview-shot" id="write-note">
+            <div class="phone-frame">
+              <img class="theme-shot-light" src="../assets/images/screenshots/iphone/journal-preview-light.webp" alt="iPhone: Journal screen in light mode scrolled to the complete Journal note card and its edit icon below Mood &amp; Vibe."
+                data-help-src-iphone="../assets/images/screenshots/iphone/journal-preview-light.webp"
+                data-help-alt-iphone="iPhone: Journal screen in light mode scrolled to the complete Journal note card and its edit icon below Mood &amp; Vibe."
+                data-help-src-duo="../assets/images/screenshots/duo/journal-preview-light.webp"
+                data-help-alt-duo="iPhone Duo: Journal screen in light mode scrolled to the complete Journal note card and its edit icon below Mood &amp; Vibe."
+                data-help-src-ipad="../assets/images/screenshots/ipad/journal-preview-light.webp"
+                data-help-alt-ipad="iPad: Journal screen in light mode scrolled to the complete Journal note card and its edit icon below Mood &amp; Vibe.">
+              <img class="theme-shot-dark" src="../assets/images/screenshots/iphone/journal-preview-dark.webp" alt="iPhone: Journal screen in dark mode scrolled to the complete Journal note card and its edit icon below Mood &amp; Vibe."
+                data-help-src-iphone="../assets/images/screenshots/iphone/journal-preview-dark.webp"
+                data-help-alt-iphone="iPhone: Journal screen in dark mode scrolled to the complete Journal note card and its edit icon below Mood &amp; Vibe."
+                data-help-src-duo="../assets/images/screenshots/duo/journal-preview-dark.webp"
+                data-help-alt-duo="iPhone Duo: Journal screen in dark mode scrolled to the complete Journal note card and its edit icon below Mood &amp; Vibe."
+                data-help-src-ipad="../assets/images/screenshots/ipad/journal-preview-dark.webp"
+                data-help-alt-ipad="iPad: Journal screen in dark mode scrolled to the complete Journal note card and its edit icon below Mood &amp; Vibe.">
+            </div>
+            <span class="callout journal-note-callout" data-help-for="iphone" aria-hidden="true">4</span>
+            <figcaption data-help-for="duo ipad">4. Scroll down to the Journal card. Tap the card or its edit icon to open the writing screen.</figcaption>
+          </figure>
+          <article class="content-card journal-note-copy">
+            <h3><span class="number">4</span>Write the note</h3>
+            <p>Scroll down to the journal preview and tap it to open the writing screen. Type your memory in the text area, then tap Save to keep your changes or Cancel to discard them.</p>
+          </article>
+        </div>
       </section>
 
       <section class="page-section" aria-labelledby="quick-title">
@@ -46,20 +101,6 @@
           <article class="quick-card"><strong>Stop map</strong><p>Show the place on the route when the location matters.</p></article>
           <article class="quick-card"><strong>Mood & vibe</strong><p>Save a mood and emoji tags that describe the stop.</p></article>
           <article class="quick-card"><strong>Journal text</strong><p>Write or refine the note that explains why the stop mattered.</p></article>
-        </div>
-      </section>
-
-      <section class="page-section split" id="write-journal" aria-labelledby="write-title">
-        <div class="section-heading">
-          <p class="eyebrow">Write Journal Notes</p>
-          <h2 id="write-title">Keep notes close to the stop they describe.</h2>
-          <p>Use Journal when a place needs more meaning than a title, timestamp, or photo can capture.</p>
-        </div>
-        <div class="content-stack">
-          <article class="content-card"><h3><span class="number">1</span>Choose a stop</h3><p>Use the stop chips to switch between places in the journey.</p></article>
-          <article class="content-card"><h3><span class="number">2</span>Confirm the context</h3><p>Review time, weather, mood rank, and map context before editing.</p></article>
-          <article class="content-card"><h3><span class="number">3</span>Add mood details</h3><p>Use mood and vibe tags to describe how the stop felt.</p></article>
-          <article class="content-card"><h3><span class="number">4</span>Write the note</h3><p>Tap the journal preview to open the writing screen. Add a short memory or a longer entry, then tap Save to keep your changes or Cancel to discard them.</p></article>
         </div>
       </section>
 

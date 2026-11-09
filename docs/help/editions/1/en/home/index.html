@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="DayMotion help for starting, resuming, and reviewing journeys from Home.">
     <title>Home Help - DayMotion</title>
+    <script src="../assets/help-device.js"></script>
     <link rel="stylesheet" href="../assets/help.css">
   <meta name="help-edition" content="1"><meta name="help-language" content="en"><script type="module" src="/daymotion-site/help/routing.mjs"></script></head>
   <body>
     <header class="site-header">
       <a class="brand-link" href="../index.html">DayMotion Help</a>
+      <div data-help-device-selector></div>
       <nav class="header-nav" aria-label="Help navigation">
         <a href="../map/index.html">Map</a>
         <a href="../stops/index.html">Stops</a>
@@ -40,8 +42,12 @@
           <article class="quick-card"><strong>Start Journey</strong><p>Begin recording. If an unfinished Journey can continue, DayMotion asks whether to add a connected new part or start separately.</p></article>
           <article class="quick-card"><strong>Resume Journey</strong><p>Return to an active or paused journey.</p></article>
           <article class="quick-card"><strong>Library</strong><p>Review saved journeys when you want to look back at a day.</p></article>
-          <article class="quick-card"><strong>Live Map, Journey, Library, Settings</strong><p>Move between main areas from the tab bar. Inside a journey, choose the Map facet to review its route, weather strip, and dated legs.</p></article>
+          <article class="quick-card"><strong>Live Map, Journey, Library, Settings</strong><p>Use the app navigation to move between main areas. Inside a journey, choose the Map facet to review its route, weather strip, and dated legs.</p></article>
         </div>
+      </section>
+
+      <section class="page-section" data-help-for="duo" aria-label="iPhone Duo navigation">
+        <p>When iPhone Duo is fully open in landscape with enough room, Home and the other companion areas appear alongside Live Map. Use the companion tabs to change areas while keeping the map in view.</p>
       </section>
 
       <section class="page-section" id="start-options" aria-labelledby="start-options-title">

@@ -46,11 +46,12 @@ html {
   overflow-x: hidden;
 }
 
+/* Clip decoration without creating a scroll container around the sticky header. */
 body {
   margin: 0;
   min-width: 320px;
   max-width: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
   background:
     radial-gradient(circle at 15% 12%, rgba(91, 163, 217, 0.22), transparent 30%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.58), rgba(255, 255, 255, 0) 34%),
@@ -283,6 +284,12 @@ h1 {
 .journal-shot .callout-route { left: auto; right: 0; top: 43%; }
 .journal-shot .callout-status { left: 0; bottom: 13%; }
 
+.journal-preview-shot figcaption {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
 .insights-shot .callout-route { left: auto; right: 0; top: 13%; }
 .insights-shot .callout-stops { right: 0; top: 35%; }
 .insights-shot .callout-status { left: 0; bottom: 32%; }
@@ -412,6 +419,48 @@ h1 {
 
 .content-card li + li {
   margin-top: 7px;
+}
+
+.journal-intro {
+  grid-template-columns: 1fr;
+  padding-bottom: 0;
+}
+
+.journal-intro h1 {
+  max-width: 20ch;
+  font-size: clamp(40px, 5vw, 64px);
+}
+
+.journal-intro .lede {
+  max-width: 48rem;
+}
+
+.journal-instructions {
+  display: grid;
+  gap: clamp(40px, 7vw, 84px);
+}
+
+.journal-step-group {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  align-items: center;
+  gap: clamp(22px, 4vw, 44px);
+}
+
+.journal-step-group .phone-stage {
+  width: min(320px, 100%);
+}
+
+.journal-step-group .section-heading p:last-child {
+  margin-bottom: 0;
+}
+
+.journal-note-callout { left: 0; top: 67%; }
+
+@media (max-width: 860px) {
+  .journal-step-group {
+    grid-template-columns: 1fr;
+  }
 }
 
 .number {
@@ -565,3 +614,87 @@ h1 {
     font-size: 13px;
   }
 }
+
+/* The static document remains a complete iPhone guide without JavaScript. */
+html:not([data-help-device]) [data-help-for]:not([data-help-for~="iphone"]),
+html[data-help-device="iphone"] [data-help-for]:not([data-help-for~="iphone"]),
+html[data-help-device="duo"] [data-help-for]:not([data-help-for~="duo"]),
+html[data-help-device="ipad"] [data-help-for]:not([data-help-for~="ipad"]),
+html[data-help-embedded] [data-help-device-selector] { display: none !important; }
+html[data-help-device-pending] img[data-help-src-iphone] { visibility: hidden; }
+html:has([data-help-device-selector]) { scroll-padding-top: 6rem; }
+@media (max-width: 1000px) {
+  html:has([data-help-device-selector]) { scroll-padding-top: 12rem; }
+}
+.site-header:has([data-help-device-selector]) {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  flex-wrap: wrap;
+  padding: 12px 0;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+html:not([data-help-embedded]) .site-header:has([data-help-device-selector]) {
+  padding-inline: 24px;
+}
+.help-device-selector {
+  display: inline-flex;
+  gap: 3px;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface-soft);
+}
+.help-device-selector button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.help-device-selector button[aria-pressed="true"] {
+  background: var(--surface);
+  color: var(--brand);
+  border-color: var(--line);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .08);
+}
+.help-device-selector button:focus-visible { outline: 3px solid var(--brand); outline-offset: 2px; }
+.help-device-icon { width: 12px; height: 19px; border: 1.5px solid currentColor; border-radius: 3px; }
+.help-device-icon-duo { width: 22px; position: relative; }
+.help-device-icon-duo::after { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; border-left: 1px solid currentColor; }
+.help-device-icon-ipad { width: 17px; height: 22px; }
+html[data-help-device="duo"] .phone-stage,
+html[data-help-device="ipad"] .phone-stage { width: min(680px, 100%); max-width: 100%; }
+html[data-help-device="duo"] .phone-frame,
+html[data-help-device="ipad"] .phone-frame { border-radius: 20px; border-width: 5px; }
+html[data-help-device="duo"] .insight-example-card .phone-frame,
+html[data-help-device="ipad"] .insight-example-card .phone-frame { max-width: 100%; }
+img[data-help-src-iphone] { width: 100%; height: auto; }
+@media (max-width: 520px) {
+  .site-header:has([data-help-device-selector]) { gap: 10px; }
+  html:not([data-help-embedded]) .site-header:has([data-help-device-selector]) { padding-inline: 8px; }
+  .help-device-selector { align-self: stretch; }
+  .help-device-selector button { flex: 1; padding-inline: 8px; }
+}
+
+/* Existing annotation coordinates describe only the iPhone captures. */
+html[data-help-device="duo"] .callout,
+html[data-help-device="ipad"] .callout { display: none; }
+
+/* Wide-device control examples retain their complete native map context. */
+html[data-help-device="duo"] .control-strip-figure,
+html[data-help-device="ipad"] .control-strip-figure { width: min(680px, 100%); }
+html[data-help-device="duo"] .weather-elevation-step,
+html[data-help-device="ipad"] .weather-elevation-step { grid-template-columns: 1fr; }
+html[data-help-device="duo"] .weather-elevation-step .insight-example-card .phone-frame,
+html[data-help-device="ipad"] .weather-elevation-step .insight-example-card .phone-frame { max-width: 100%; }

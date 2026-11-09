@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Use Live Map for recording controls and the Journey Map facet to review routes, weather, and dated legs.">
     <title>Map Help - DayMotion</title>
+    <script src="../assets/help-device.js"></script>
     <link rel="stylesheet" href="../assets/help.css">
   <meta name="help-edition" content="1"><meta name="help-language" content="en"><script type="module" src="/daymotion-site/help/routing.mjs"></script></head>
   <body>
     <header class="site-header">
       <a class="brand-link" href="../index.html">DayMotion Help</a>
+      <div data-help-device-selector></div>
       <nav class="header-nav" aria-label="Help navigation">
         <a href="../map/index.html">Map</a>
         <a href="../stops/index.html">Stops</a>
@@ -25,7 +27,8 @@
         <div>
           <p class="eyebrow">Map Help</p>
           <h1 id="page-title">Follow the shape of a journey.</h1>
-          <p class="lede">Use the <strong>Live Map</strong> bottom tab for recording and map controls. Open a journey’s <strong>Map</strong> facet to review its route, weather strip, and dated travel legs.</p>
+          <p class="lede">Use <strong>Live Map</strong> for recording and map controls. Open a journey’s <strong>Map</strong> facet to review its route, weather strip, and dated travel legs.</p>
+          <p data-help-for="duo">When iPhone Duo is fully open in landscape with enough room, Live Map stays alongside the other app areas. Use the companion tabs to switch areas while keeping the map in view.</p>
           <div class="hero-actions" aria-label="Primary help actions">
             <a class="button-link primary" href="#map-controls">Live Map controls</a>
             <a class="button-link" href="#journey-map">Journey Map</a>
@@ -35,8 +38,20 @@
 
         <figure class="phone-stage annotated-map live-map-shot" aria-label="Annotated DayMotion Live Map screenshot">
           <div class="phone-frame">
-            <img class="theme-shot-light" src="../assets/images/screenshots/waterfront-golden-hour/map-light.png" alt="DayMotion Live Map in light mode showing the Waterfront Golden Hour Toronto-to-Niagara route with five numbered stops and the Live Map bottom tab selected.">
-            <img class="theme-shot-dark" src="../assets/images/screenshots/waterfront-golden-hour/map-dark.png" alt="DayMotion Live Map in dark mode showing the Waterfront Golden Hour Toronto-to-Niagara route with five numbered stops and the Live Map bottom tab selected.">
+            <img class="theme-shot-light" src="../assets/images/screenshots/iphone/map-light.webp" alt="iPhone: DayMotion Live Map in light mode showing the Waterfront Golden Hour Toronto-to-Niagara route with five numbered stops."
+              data-help-src-iphone="../assets/images/screenshots/iphone/map-light.webp"
+              data-help-alt-iphone="iPhone: DayMotion Live Map in light mode showing the Waterfront Golden Hour Toronto-to-Niagara route with five numbered stops."
+              data-help-src-duo="../assets/images/screenshots/duo/map-light.webp"
+              data-help-alt-duo="iPhone Duo: DayMotion Live Map in light mode showing the Waterfront Golden Hour Toronto-to-Niagara route with five numbered stops."
+              data-help-src-ipad="../assets/images/screenshots/ipad/map-light.webp"
+              data-help-alt-ipad="iPad: DayMotion Live Map in light mode showing the Waterfront Golden Hour Toronto-to-Niagara route with five numbered stops.">
+            <img class="theme-shot-dark" src="../assets/images/screenshots/iphone/map-dark.webp" alt="iPhone: DayMotion Live Map in dark mode showing the Waterfront Golden Hour Toronto-to-Niagara route with five numbered stops."
+              data-help-src-iphone="../assets/images/screenshots/iphone/map-dark.webp"
+              data-help-alt-iphone="iPhone: DayMotion Live Map in dark mode showing the Waterfront Golden Hour Toronto-to-Niagara route with five numbered stops."
+              data-help-src-duo="../assets/images/screenshots/duo/map-dark.webp"
+              data-help-alt-duo="iPhone Duo: DayMotion Live Map in dark mode showing the Waterfront Golden Hour Toronto-to-Niagara route with five numbered stops."
+              data-help-src-ipad="../assets/images/screenshots/ipad/map-dark.webp"
+              data-help-alt-ipad="iPad: DayMotion Live Map in dark mode showing the Waterfront Golden Hour Toronto-to-Niagara route with five numbered stops.">
           </div>
           <span class="callout callout-route" aria-hidden="true">1</span>
           <span class="callout callout-stops" aria-hidden="true">2</span>
@@ -62,8 +77,20 @@
         <h2 id="controls-title">Use the controls to record, inspect, and add photos.</h2>
         <p>The screenshots show a stopped journey. The camera button is available while a journey is active.</p>
         <figure class="control-strip-figure" aria-label="Map control bar">
-          <img class="theme-shot-light" src="../assets/images/screenshots/waterfront-golden-hour/map-controls-light.png" alt="Light mode Map controls for a stopped journey, showing zoom in, zoom out, position, and help buttons.">
-          <img class="theme-shot-dark" src="../assets/images/screenshots/waterfront-golden-hour/map-controls-dark.png" alt="Dark mode Map controls for a stopped journey, showing zoom in, zoom out, position, and help buttons.">
+          <img class="theme-shot-light" src="../assets/images/screenshots/iphone/map-controls-light.webp" alt="iPhone: Light mode Map controls for a stopped journey, showing zoom in, zoom out, position, and help buttons."
+              data-help-src-iphone="../assets/images/screenshots/iphone/map-controls-light.webp"
+              data-help-alt-iphone="iPhone: Light mode Map controls for a stopped journey, showing zoom in, zoom out, position, and help buttons."
+              data-help-src-duo="../assets/images/screenshots/duo/map-controls-light.webp"
+              data-help-alt-duo="iPhone Duo: DayMotion Live Map in light mode for a stopped journey, including zoom, position, and help controls."
+              data-help-src-ipad="../assets/images/screenshots/ipad/map-controls-light.webp"
+              data-help-alt-ipad="iPad: DayMotion Live Map in light mode for a stopped journey, including zoom, position, and help controls.">
+          <img class="theme-shot-dark" src="../assets/images/screenshots/iphone/map-controls-dark.webp" alt="iPhone: Dark mode Map controls for a stopped journey, showing zoom in, zoom out, position, and help buttons."
+              data-help-src-iphone="../assets/images/screenshots/iphone/map-controls-dark.webp"
+              data-help-alt-iphone="iPhone: Dark mode Map controls for a stopped journey, showing zoom in, zoom out, position, and help buttons."
+              data-help-src-duo="../assets/images/screenshots/duo/map-controls-dark.webp"
+              data-help-alt-duo="iPhone Duo: DayMotion Live Map in dark mode for a stopped journey, including zoom, position, and help controls."
+              data-help-src-ipad="../assets/images/screenshots/ipad/map-controls-dark.webp"
+              data-help-alt-ipad="iPad: DayMotion Live Map in dark mode for a stopped journey, including zoom, position, and help controls.">
         </figure>
         <div class="quick-grid">
           <article class="quick-card"><strong>Start</strong><p>Starts a new recording session so DayMotion can capture movement, stops, weather, photos, moods, and notes for the journey.</p></article>
@@ -83,7 +110,7 @@
           <article class="quick-card"><strong>Route</strong><p>The route line shows captured movement across the journey. Curves and intermediate points preserve the shape of travel.</p></article>
           <article class="quick-card"><strong>Stops</strong><p>Stops are ordered from first to last. Open the Stops facet in Journey to review time, weather, mood, journal text, and photos.</p></article>
           <article class="quick-card"><strong>Photos</strong><p>Use the camera button when a photo should belong to the active journey, especially while reviewing the map context.</p></article>
-          <article class="quick-card"><strong>Navigation</strong><p>The bottom tabs are Home, Live Map, Journey, Library, and Settings. Inside a journey, Map is one of the review facets alongside Insights, Stops, Journal, and Photos.</p></article>
+          <article class="quick-card"><strong>Navigation</strong><p>The main areas are Home, Live Map, Journey, Library, and Settings. Inside a journey, Map is one of the review facets alongside Insights, Stops, Journal, and Photos.</p></article>
         </div>
       </section>
 
@@ -91,7 +118,7 @@
         <div class="section-heading">
           <p class="eyebrow">Journey · Map</p>
           <h2 id="journey-map-title">Review the route, weather, and legs together.</h2>
-          <p>Open a journey from Library, or use the Journey tab, then choose the Map facet. The route overview sits above a weather strip and a list of legs between stops.</p>
+          <p>Open a journey from Library, or use the Journey tab, then choose the Map facet. The route overview includes a weather strip and a list of legs between stops.</p>
           <div class="content-stack">
             <article class="content-card"><h3>Weather along the journey</h3><p>The strip shows recorded conditions and temperatures. Numbered circles match the stops on the map, with each stop’s arrival time beside its number. Readings between stops show the time the weather was recorded. Similar readings between stops are condensed so changes are easier to spot.</p><p>Swipe horizontally to explore a longer strip. A faded edge on the right indicates that the strip can scroll.</p></article>
             <article class="content-card"><h3>Dated leg cards</h3><p>Each leg connects two stops and shows its duration, distance, speed, and date and time range. Scroll the leg list to review the rest of the journey.</p></article>
@@ -99,8 +126,20 @@
         </div>
         <figure class="phone-stage" aria-label="Journey Map overview with weather and dated legs">
           <div class="phone-frame">
-            <img class="theme-shot-light" src="../assets/images/screenshots/waterfront-golden-hour/journey-map-light.png" alt="Journey Map in light mode showing the Waterfront Golden Hour route, recorded weather strip, and leg cards with dates and times.">
-            <img class="theme-shot-dark" src="../assets/images/screenshots/waterfront-golden-hour/journey-map-dark.png" alt="Journey Map in dark mode showing the Waterfront Golden Hour route, recorded weather strip, and leg cards with dates and times.">
+            <img class="theme-shot-light" src="../assets/images/screenshots/iphone/journey-map-light.webp" alt="iPhone: Journey Map in light mode showing the Waterfront Golden Hour route, recorded weather strip, and leg cards with dates and times."
+              data-help-src-iphone="../assets/images/screenshots/iphone/journey-map-light.webp"
+              data-help-alt-iphone="iPhone: Journey Map in light mode showing the Waterfront Golden Hour route, recorded weather strip, and leg cards with dates and times."
+              data-help-src-duo="../assets/images/screenshots/duo/journey-map-light.webp"
+              data-help-alt-duo="iPhone Duo: Journey Map in light mode showing the Waterfront Golden Hour route, recorded weather strip, and leg cards with dates and times."
+              data-help-src-ipad="../assets/images/screenshots/ipad/journey-map-light.webp"
+              data-help-alt-ipad="iPad: Journey Map in light mode showing the Waterfront Golden Hour route, recorded weather strip, and leg cards with dates and times.">
+            <img class="theme-shot-dark" src="../assets/images/screenshots/iphone/journey-map-dark.webp" alt="iPhone: Journey Map in dark mode showing the Waterfront Golden Hour route, recorded weather strip, and leg cards with dates and times."
+              data-help-src-iphone="../assets/images/screenshots/iphone/journey-map-dark.webp"
+              data-help-alt-iphone="iPhone: Journey Map in dark mode showing the Waterfront Golden Hour route, recorded weather strip, and leg cards with dates and times."
+              data-help-src-duo="../assets/images/screenshots/duo/journey-map-dark.webp"
+              data-help-alt-duo="iPhone Duo: Journey Map in dark mode showing the Waterfront Golden Hour route, recorded weather strip, and leg cards with dates and times."
+              data-help-src-ipad="../assets/images/screenshots/ipad/journey-map-dark.webp"
+              data-help-alt-ipad="iPad: Journey Map in dark mode showing the Waterfront Golden Hour route, recorded weather strip, and leg cards with dates and times.">
           </div>
         </figure>
       </section>
@@ -108,8 +147,20 @@
       <section class="page-section split" aria-labelledby="selected-leg-title">
         <figure class="phone-stage" aria-label="Journey Map with one leg selected">
           <div class="phone-frame">
-            <img class="theme-shot-light" src="../assets/images/screenshots/waterfront-golden-hour/journey-map-leg-light.png" alt="Journey Map in light mode with a leg selected, the map focused on that leg, and weather readings for its endpoint stops.">
-            <img class="theme-shot-dark" src="../assets/images/screenshots/waterfront-golden-hour/journey-map-leg-dark.png" alt="Journey Map in dark mode with a leg selected, the map focused on that leg, and weather readings for its endpoint stops.">
+            <img class="theme-shot-light" src="../assets/images/screenshots/iphone/journey-map-leg-light.webp" alt="iPhone: Journey Map in light mode with a leg selected, the map focused on that leg, and weather readings for its endpoint stops."
+              data-help-src-iphone="../assets/images/screenshots/iphone/journey-map-leg-light.webp"
+              data-help-alt-iphone="iPhone: Journey Map in light mode with a leg selected, the map focused on that leg, and weather readings for its endpoint stops."
+              data-help-src-duo="../assets/images/screenshots/duo/journey-map-leg-light.webp"
+              data-help-alt-duo="iPhone Duo: Journey Map in light mode with a leg selected, the map focused on that leg, and weather readings for its endpoint stops."
+              data-help-src-ipad="../assets/images/screenshots/ipad/journey-map-leg-light.webp"
+              data-help-alt-ipad="iPad: Journey Map in light mode with a leg selected, the map focused on that leg, and weather readings for its endpoint stops.">
+            <img class="theme-shot-dark" src="../assets/images/screenshots/iphone/journey-map-leg-dark.webp" alt="iPhone: Journey Map in dark mode with a leg selected, the map focused on that leg, and weather readings for its endpoint stops."
+              data-help-src-iphone="../assets/images/screenshots/iphone/journey-map-leg-dark.webp"
+              data-help-alt-iphone="iPhone: Journey Map in dark mode with a leg selected, the map focused on that leg, and weather readings for its endpoint stops."
+              data-help-src-duo="../assets/images/screenshots/duo/journey-map-leg-dark.webp"
+              data-help-alt-duo="iPhone Duo: Journey Map in dark mode with a leg selected, the map focused on that leg, and weather readings for its endpoint stops."
+              data-help-src-ipad="../assets/images/screenshots/ipad/journey-map-leg-dark.webp"
+              data-help-alt-ipad="iPad: Journey Map in dark mode with a leg selected, the map focused on that leg, and weather readings for its endpoint stops.">
           </div>
         </figure>
         <div class="section-heading">
@@ -135,7 +186,7 @@
         <p class="eyebrow">Questions</p>
         <h2 id="questions-title">Common questions</h2>
         <div class="faq-list">
-          <article class="faq-item"><h3>What is the difference between Live Map and the Map facet?</h3><p>Live Map is a bottom tab with recording and location controls. The Map facet is inside a journey and brings its route, recorded weather, and dated leg cards together for review.</p></article>
+          <article class="faq-item"><h3>What is the difference between Live Map and the Map facet?</h3><p>Live Map provides recording and location controls. The Map facet is inside a journey and brings its route, recorded weather, and dated leg cards together for review.</p></article>
           <article class="faq-item"><h3>What is the camera button for?</h3><p>It lets you capture a photo from Live Map while preserving the journey context. Use it when the photo belongs to the place or route you are recording.</p></article>
           <article class="faq-item"><h3>What is the difference between Pause and End?</h3><p>Pause keeps the journey available while DayMotion stops recording new movement. End finishes the active journey so you can review it as a completed memory.</p></article>
           <article class="faq-item"><h3>Why use zoom controls?</h3><p>Zoom in to inspect nearby stops or route detail. Zoom out when you want the full shape of the journey.</p></article>

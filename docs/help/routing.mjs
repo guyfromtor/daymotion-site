@@ -29,6 +29,16 @@ export function resolveHelpRoute({ pathname, explicitLanguage, savedLanguage, br
   return { kind: fallback ? 'languageFallback' : 'content', edition, language, topic, fallback };
 }
 
+export function helpDestination(route, currentURL) {
+  const current = new URL(currentURL);
+  const url = new URL(`${prefix}editions/${route.edition}/${route.language}/${route.topic ? route.topic + '/' : ''}`, current);
+  const device = current.searchParams.get('device');
+  if (['iphone', 'duo', 'ipad'].includes(device)) url.searchParams.set('device', device);
+  url.hash = current.hash;
+  if (route.fallback || current.searchParams.get('helpLanguageUnavailable') === '1') url.searchParams.set('helpLanguageUnavailable', '1');
+  return url;
+}
+
 async function openHelp() {
   const response = await fetch(new URL('./catalog.json', import.meta.url));
   if (!response.ok) return;
@@ -37,13 +47,10 @@ async function openHelp() {
   try { savedLanguage = localStorage.getItem('daymotion.help.language'); } catch { /* Storage is optional. */ }
   const route = resolveHelpRoute({ pathname: location.pathname, savedLanguage, browserLanguages: navigator.languages, catalog });
   if (route.kind === 'notFound') return;
-  const destination = `${prefix}editions/${route.edition}/${route.language}/${route.topic ? route.topic + '/' : ''}`;
+  const destination = helpDestination(route, location.href);
   const current = location.pathname.replace(/index\.html$/, '');
-  if (current !== destination) {
-    const url = new URL(destination, location.origin);
-    url.hash = location.hash;
-    if (route.fallback) url.searchParams.set('helpLanguageUnavailable', '1');
-    location.replace(url.href);
+  if (current !== destination.pathname) {
+    location.replace(destination.href);
     return;
   }
   const main = document.querySelector('main');
@@ -59,6 +66,8 @@ async function openHelp() {
     notice.append('Help for an older version · ');
     const link = document.createElement('a');
     link.href = `${prefix}${route.topic ? route.topic + '/' : ''}`;
+    const device = document.documentElement.dataset.helpDevice;
+    if (['iphone', 'duo', 'ipad'].includes(device)) link.search = `?device=${device}`;
     link.textContent = 'View latest help'; notice.append(link); main.prepend(notice);
   }
 }
