@@ -114,6 +114,10 @@ img {
   text-decoration: none;
 }
 
+.header-nav a[aria-current="page"] {
+  color: var(--brand);
+}
+
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
